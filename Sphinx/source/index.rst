@@ -6,13 +6,13 @@ Welcome to Besi Projekte und zugehoeriges Wissenswertes's documentation!
 	
 	:download:`Besi Reminder Sheet <../../ReminderSheet/ReminderSheet.pdf>`
 	
-	:download:`Knowledge Database <../../ReminderSheet/ReminderSheet.pdf>`
+	:download:`Knowledge Database <../../Knowledge Database/Knowledge_Database.pdf>`
 
 .. toctree::
    :maxdepth: 4
 
    kinematik/kinematik
-   kinematik/files/Breaking_distance.ipynb
+
 
 
 Indices and tables

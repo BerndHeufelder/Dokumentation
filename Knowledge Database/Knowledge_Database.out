@@ -1,0 +1,208 @@
+\BOOKMARK [-1][]{part.2}{I Physik}{}% 1
+\BOOKMARK [0][]{section.3}{1 Astronomie}{part.2}% 2
+\BOOKMARK [1][]{section.4}{2 Elektromagnetismus}{section.3}% 3
+\BOOKMARK [2][]{subsection.5}{2.1 Elektromagnetische Welle}{section.4}% 4
+\BOOKMARK [3][]{subsubsection.7}{2.1.1 Quellen von elektromagnetische Wellen}{subsection.5}% 5
+\BOOKMARK [4][]{paragraph.8}{2.1.1.1 Hertzscher Dipol}{subsubsection.7}% 6
+\BOOKMARK [4][]{paragraph.11}{2.1.1.2 R\366ntgenstrahlung}{subsubsection.7}% 7
+\BOOKMARK [4][]{paragraph.12}{2.1.1.3 W\344rmestrahlung}{subsubsection.7}% 8
+\BOOKMARK [2][]{subsection.15}{2.2 Welle-Teilchen-Dualismus}{section.4}% 9
+\BOOKMARK [2][]{subsection.16}{2.3 Elektromagnetisches Spektrum}{section.4}% 10
+\BOOKMARK [-1][]{part.17}{II Mathematik}{}% 11
+\BOOKMARK [0][]{section.18}{3 Allgemeines}{part.17}% 12
+\BOOKMARK [1][]{section.19}{4 Tensorfelder}{section.18}% 13
+\BOOKMARK [1][]{section.21}{5 Lineare Algebra}{section.18}% 14
+\BOOKMARK [1][]{section.22}{6 Fast Fourier transformation \(FFT\)}{section.18}% 15
+\BOOKMARK [1][]{section.23}{7 Mathematische Optimierung}{section.18}% 16
+\BOOKMARK [2][]{subsection.24}{7.1 Lineare Optimierung}{section.23}% 17
+\BOOKMARK [2][]{subsection.25}{7.2 Ganzzahlige Lineare Optimierung}{section.23}% 18
+\BOOKMARK [2][]{subsection.26}{7.3 Globale Optimierung}{section.23}% 19
+\BOOKMARK [3][]{subsubsection.27}{7.3.1 Quadratische Optimierung}{subsection.26}% 20
+\BOOKMARK [3][]{subsubsection.28}{7.3.2 Lineare kleinste Fehlerquadrate}{subsection.26}% 21
+\BOOKMARK [3][]{subsubsection.29}{7.3.3 Nichtlineare kleinste Fehlerquadrate}{subsection.26}% 22
+\BOOKMARK [3][]{subsubsection.30}{7.3.4 Ableitungsfreie Methoden}{subsection.26}% 23
+\BOOKMARK [2][]{subsection.31}{7.4 Konvexe Optimierung}{section.23}% 24
+\BOOKMARK [2][]{subsection.32}{7.5 Variationsrechnung}{section.23}% 25
+\BOOKMARK [2][]{subsection.33}{7.6 Deterministische Optimierungsverfahen}{section.23}% 26
+\BOOKMARK [3][]{subsubsection.34}{7.6.1 Nichtlineare Optimierung ohne Nebenbedingungen}{subsection.33}% 27
+\BOOKMARK [4][]{paragraph.35}{7.6.1.1 Klassische Gradientenverfahren}{subsubsection.34}% 28
+\BOOKMARK [4][]{paragraph.36}{7.6.1.2 Konjugierte Gradientenverfahren}{subsubsection.34}% 29
+\BOOKMARK [4][]{paragraph.38}{7.6.1.3 Newton-Verfahren}{subsubsection.34}% 30
+\BOOKMARK [4][]{paragraph.41}{7.6.1.4 Quasi-Newton-Verfahren}{subsubsection.34}% 31
+\BOOKMARK [4][]{paragraph.45}{7.6.1.5 Downhill-Simplex-Verfahren/ Nelder-Mead-Verfahren}{subsubsection.34}% 32
+\BOOKMARK [2][]{subsection.54}{7.7 Stochastische Optimierungsverfahen}{section.23}% 33
+\BOOKMARK [3][]{subsubsection.55}{7.7.1 Evolution\344re Algorithmen}{subsection.54}% 34
+\BOOKMARK [4][]{paragraph.56}{7.7.1.1 Genetische Algorithmen}{subsubsection.55}% 35
+\BOOKMARK [4][]{paragraph.57}{7.7.1.2 Schwarmintelligenz-Verfahren}{subsubsection.55}% 36
+\BOOKMARK [1][]{section.58}{8 Numerische Mathematik}{section.18}% 37
+\BOOKMARK [2][]{subsection.59}{8.1 Lineare Gleichungssysteme - L\366sungsverfahren}{section.58}% 38
+\BOOKMARK [2][]{subsection.60}{8.2 Nichtlineare Gleichungssysteme - L\366sungsverfahren}{section.58}% 39
+\BOOKMARK [2][]{subsection.61}{8.3 Numerische Integration - L\366sungsverfahren}{section.58}% 40
+\BOOKMARK [2][]{subsection.62}{8.4 Numerische Approximation und Interpolation}{section.58}% 41
+\BOOKMARK [2][]{subsection.63}{8.5 Gew\366hnliche Differentialgleichungen - L\366sungsverfahren}{section.58}% 42
+\BOOKMARK [2][]{subsection.64}{8.6 Partielle Differentialgleichungen - L\366sungsverfahren}{section.58}% 43
+\BOOKMARK [2][]{subsection.65}{8.7 Eigenwertberechnung - L\366sungsverfahren}{section.58}% 44
+\BOOKMARK [2][]{subsection.66}{8.8 FFT - schnelle Fourier-Transformation}{section.58}% 45
+\BOOKMARK [-1][]{part.67}{III Mechanik}{}% 46
+\BOOKMARK [0][]{section.68}{9 Begrifflichkeiten}{part.67}% 47
+\BOOKMARK [1][]{subsection.69}{9.1 Generalisierte Koordinaten}{section.68}% 48
+\BOOKMARK [2][]{subsection.71}{9.2 Arten von Kr\344ften}{subsection.69}% 49
+\BOOKMARK [2][]{subsection.72}{9.3 Holonome Systeme}{subsection.69}% 50
+\BOOKMARK [1][]{section.73}{10 Kinematik}{section.68}% 51
+\BOOKMARK [1][]{section.74}{11 Kinetik}{section.68}% 52
+\BOOKMARK [-1][]{part.75}{IV Elektrotechnik}{}% 53
+\BOOKMARK [0][]{section.76}{12 Grundlagen}{part.75}% 54
+\BOOKMARK [1][]{subsection.77}{12.1 Maxwell-Gleichungen}{section.76}% 55
+\BOOKMARK [2][]{subsubsection.78}{12.1.1 Mikroskopisch}{subsection.77}% 56
+\BOOKMARK [3][]{subsubsection.87}{12.1.2 Makroskopisch}{subsubsection.78}% 57
+\BOOKMARK [2][]{subsection.92}{12.2 Polarisation}{subsection.77}% 58
+\BOOKMARK [2][]{subsection.93}{12.3 Permittivit\344t - Dielektrizit\344t}{subsection.77}% 59
+\BOOKMARK [2][]{subsection.94}{12.4 Elektrische Feldst\344rke und Verschiebungsflussdichte}{subsection.77}% 60
+\BOOKMARK [2][]{subsection.95}{12.5 Magnetisierung}{subsection.77}% 61
+\BOOKMARK [2][]{subsection.96}{12.6 Magnetische Permeabilit\344t}{subsection.77}% 62
+\BOOKMARK [2][]{subsection.97}{12.7 Magnetische Flussdichte und Feldst\344rke}{subsection.77}% 63
+\BOOKMARK [2][]{subsection.98}{12.8 Verschiebungsstrom}{subsection.77}% 64
+\BOOKMARK [2][]{subsection.100}{12.9 Wirbelstr\366me}{subsection.77}% 65
+\BOOKMARK [2][]{subsection.104}{12.10 Reluktanzkraft/ Maxwellkraft-Prinzip}{subsection.77}% 66
+\BOOKMARK [2][]{subsection.105}{12.11 Halbleiter}{subsection.77}% 67
+\BOOKMARK [2][]{subsection.106}{12.12 Raumladungszone und p/n-\334bergang}{subsection.77}% 68
+\BOOKMARK [1][]{section.111}{13 Elektrische Bauelemente}{section.76}% 69
+\BOOKMARK [2][]{subsection.112}{13.1 Bipolar-Transistor}{section.111}% 70
+\BOOKMARK [1][]{section.114}{14 Elektronische Grundschaltungen}{section.76}% 71
+\BOOKMARK [2][]{subsection.115}{14.1 Wechselrichter}{section.114}% 72
+\BOOKMARK [1][]{section.119}{15 Filter}{section.76}% 73
+\BOOKMARK [2][]{subsection.120}{15.1 Filtertypen}{section.119}% 74
+\BOOKMARK [2][]{subsection.121}{15.2 Analoges aktives Filter}{section.119}% 75
+\BOOKMARK [2][]{subsection.122}{15.3 Analoges passives Filter}{section.119}% 76
+\BOOKMARK [3][]{subsubsection.123}{15.3.1 Topologien}{subsection.122}% 77
+\BOOKMARK [3][]{subsubsection.124}{15.3.2 Tiefpassfilter}{subsection.122}% 78
+\BOOKMARK [3][]{subsubsection.125}{15.3.3 Hochpassfilter}{subsection.122}% 79
+\BOOKMARK [3][]{subsubsection.126}{15.3.4 Notchfilter}{subsection.122}% 80
+\BOOKMARK [2][]{subsection.127}{15.4 Digitales Filter}{section.119}% 81
+\BOOKMARK [3][]{subsubsection.128}{15.4.1 FIR - Finite Impulse Response}{subsection.127}% 82
+\BOOKMARK [3][]{subsubsection.129}{15.4.2 IIR - Infinite Impulse Response}{subsection.127}% 83
+\BOOKMARK [2][]{subsection.130}{15.5 Kalmanfilter}{section.119}% 84
+\BOOKMARK [1][]{section.131}{16 Sensoren}{section.76}% 85
+\BOOKMARK [2][]{subsection.132}{16.1 \334bersicht von Sensoren nach deren Messgr\366\337en}{section.131}% 86
+\BOOKMARK [2][]{subsection.133}{16.2 Encoder}{section.131}% 87
+\BOOKMARK [3][]{subsubsection.134}{16.2.1 TTL-Encoder}{subsection.133}% 88
+\BOOKMARK [3][]{subsubsection.135}{16.2.2 SinCos-Encoder}{subsection.133}% 89
+\BOOKMARK [2][]{subsection.136}{16.3 Piezoelektrische Sensoren}{section.131}% 90
+\BOOKMARK [2][]{subsection.137}{16.4 Induktive Sensoren}{section.131}% 91
+\BOOKMARK [2][]{subsection.138}{16.5 Kapazitive Sensoren}{section.131}% 92
+\BOOKMARK [2][]{subsection.139}{16.6 Mechanische Sensoren}{section.131}% 93
+\BOOKMARK [2][]{subsection.140}{16.7 Thermoelektrische Sensoren}{section.131}% 94
+\BOOKMARK [2][]{subsection.141}{16.8 Resistive Sensoren}{section.131}% 95
+\BOOKMARK [2][]{subsection.142}{16.9 Magnetische Sensoren}{section.131}% 96
+\BOOKMARK [2][]{subsection.143}{16.10 Optische Sensoren}{section.131}% 97
+\BOOKMARK [3][]{subsubsection.144}{16.10.1 Interferometer}{subsection.143}% 98
+\BOOKMARK [1][]{section.145}{17 Elektrische Maschinen}{section.76}% 99
+\BOOKMARK [2][]{subsection.146}{17.1 Station\344re Maschinen}{section.145}% 100
+\BOOKMARK [3][]{subsubsection.147}{17.1.1 Transformator}{subsection.146}% 101
+\BOOKMARK [2][]{subsection.152}{17.2 Elektrische Aktuatoren}{section.145}% 102
+\BOOKMARK [3][]{subsubsection.153}{17.2.1 Linearaktuatoren}{subsection.152}% 103
+\BOOKMARK [4][]{paragraph.158}{17.2.1.1 1-phasen Linearmotor/ Linear Voice Coil Motor/ Tauchspulenaktuator}{subsubsection.153}% 104
+\BOOKMARK [4][]{paragraph.159}{17.2.1.2 2- und 3-phasen Linearmotor}{subsubsection.153}% 105
+\BOOKMARK [3][]{subsubsection.162}{17.2.2 Rotationsaktuatoren}{subsection.152}% 106
+\BOOKMARK [4][]{paragraph.163}{17.2.2.1 Gleichstrommotoren}{subsubsection.162}% 107
+\BOOKMARK [5][]{section*.164}{Brushless DC-Motor}{paragraph.163}% 108
+\BOOKMARK [5][]{section*.166}{Steppermotor}{paragraph.163}% 109
+\BOOKMARK [5][]{section*.174}{Servomotor}{paragraph.163}% 110
+\BOOKMARK [5][]{section*.176}{Torque-Motor}{paragraph.163}% 111
+\BOOKMARK [4][]{paragraph.177}{17.2.2.2 Drehstrommotoren}{subsubsection.162}% 112
+\BOOKMARK [5][]{section*.178}{Synchronmotor}{paragraph.177}% 113
+\BOOKMARK [5][]{section*.179}{Asynchronmotor}{paragraph.177}% 114
+\BOOKMARK [4][]{paragraph.180}{17.2.2.3 Wechselstrommotoren}{subsubsection.162}% 115
+\BOOKMARK [5][]{section*.181}{Reluktanzmotor}{paragraph.180}% 116
+\BOOKMARK [5][]{section*.182}{...}{paragraph.180}% 117
+\BOOKMARK [-1][]{part.183}{V Regelungstechnik}{}% 118
+\BOOKMARK [0][]{section.184}{18 Begrifflichkeiten}{part.183}% 119
+\BOOKMARK [1][]{section.185}{19 Eigenschaften von Systemen}{section.184}% 120
+\BOOKMARK [2][]{subsection.186}{19.1 Flachheit}{section.185}% 121
+\BOOKMARK [1][]{section.188}{20 Systemtransformationen}{section.184}% 122
+\BOOKMARK [2][]{subsection.189}{20.1 Zustandstransformation}{section.188}% 123
+\BOOKMARK [3][]{subsubsection.190}{20.1.1 Lineare Zustandstransformation}{subsection.189}% 124
+\BOOKMARK [3][]{subsubsection.192}{20.1.2 Nichtlineare Zustandstransformation}{subsection.189}% 125
+\BOOKMARK [4][]{paragraph.193}{20.1.2.1 Herleitung des Diffeomorphismus \(Transformationsvorschrift \040q\)}{subsubsection.192}% 126
+\BOOKMARK [2][]{subsection.194}{20.2 Eingangstransformation}{section.188}% 127
+\BOOKMARK [1][]{section.195}{21 Stabilit\344t}{section.184}% 128
+\BOOKMARK [2][]{subsection.196}{21.1 Stabilit\344tsanalyse des charakteristischen Polynoms}{section.195}% 129
+\BOOKMARK [1][]{section.197}{22 Eigenschaften eines Regelkreises}{section.184}% 130
+\BOOKMARK [2][]{subsection.198}{22.1 Bandbreite}{section.197}% 131
+\BOOKMARK [2][]{subsection.200}{22.2 Nyquist-Diagramm}{section.197}% 132
+\BOOKMARK [2][]{subsection.201}{22.3 Wurzelortskurve}{section.197}% 133
+\BOOKMARK [2][]{subsection.202}{22.4 Empirische Grundformeln}{section.197}% 134
+\BOOKMARK [2][]{subsection.203}{22.5 F\374hrungs- und St\366rungsverhalten eines Regelkreises}{section.197}% 135
+\BOOKMARK [1][]{section.204}{23 Identifikation von Systemen}{section.184}% 136
+\BOOKMARK [1][]{section.205}{24 Systemdarstellung: Normal- und Regelungsformen}{section.184}% 137
+\BOOKMARK [2][]{subsection.206}{24.1 Normalformen}{section.205}% 138
+\BOOKMARK [3][]{subsubsection.207}{24.1.1 Regelungsnormalform \(auch Steuerungsnormalform\)}{subsection.206}% 139
+\BOOKMARK [3][]{subsubsection.208}{24.1.2 Beobachtungsnormalform}{subsection.206}% 140
+\BOOKMARK [3][]{subsubsection.209}{24.1.3 Kanonische Normalform}{subsection.206}% 141
+\BOOKMARK [3][]{subsubsection.210}{24.1.4 Brunovsky\205Normalform}{subsection.206}% 142
+\BOOKMARK [3][]{subsubsection.211}{24.1.5 Jordansche-Normalform}{subsection.206}% 143
+\BOOKMARK [3][]{subsubsection.212}{24.1.6 Nichtlineare Regelungsnormalform}{subsection.206}% 144
+\BOOKMARK [4][]{paragraph.215}{24.1.6.1 Zustandskoordinatentransformation mittels Lie-Ableitungen}{subsubsection.212}% 145
+\BOOKMARK [3][]{subsubsection.218}{24.1.7 Byrnes-Isidori-Normalform}{subsection.206}% 146
+\BOOKMARK [1][]{section.219}{25 Arten von Regelstrecken}{section.184}% 147
+\BOOKMARK [1][]{section.220}{26 Arten von Reglern}{section.184}% 148
+\BOOKMARK [2][]{subsection.221}{26.1 Standardregelkreis}{section.220}% 149
+\BOOKMARK [2][]{subsection.223}{26.2 Zustandsregler}{section.220}% 150
+\BOOKMARK [1][]{section.225}{27 Auslegung von Reglern}{section.184}% 151
+\BOOKMARK [2][]{subsection.226}{27.1 Reglerauslegung durch Polvorgabe}{section.225}% 152
+\BOOKMARK [2][]{subsection.227}{27.2 Frequenzkennlinienverfahren}{section.225}% 153
+\BOOKMARK [1][]{section.228}{28 Arten von R\374ckf\374hrungen}{section.184}% 154
+\BOOKMARK [2][]{subsection.229}{28.1 Ausgangsr\374ckf\374hrung}{section.228}% 155
+\BOOKMARK [2][]{subsection.230}{28.2 Zustandsr\374ckf\374hrung}{section.228}% 156
+\BOOKMARK [3][]{subsubsection.231}{28.2.1 Statische Zustandsr\374ckf\374hrung}{subsection.230}% 157
+\BOOKMARK [3][]{subsubsection.233}{28.2.2 Quasi-statische Zustandsr\374ckf\374hrung}{subsection.230}% 158
+\BOOKMARK [3][]{subsubsection.234}{28.2.3 Dynamische Zustandsr\374ckf\374hrung}{subsection.230}% 159
+\BOOKMARK [1][]{section.236}{29 Stellgr\366\337enbeschr\344nkung}{section.184}% 160
+\BOOKMARK [2][]{subsection.237}{29.1 Anti-Windup Ma\337nahmen bei Reglern mit I-Anteil}{section.236}% 161
+\BOOKMARK [1][]{section.238}{30 Regelungen f\374r nichtlineare Strecken}{section.184}% 162
+\BOOKMARK [2][]{subsection.239}{30.1 Linearisungsmethoden}{section.238}% 163
+\BOOKMARK [3][]{subsubsection.240}{30.1.1 Taylor-Linearisierung}{subsection.239}% 164
+\BOOKMARK [3][]{subsubsection.241}{30.1.2 Carleman-Linearisierung}{subsection.239}% 165
+\BOOKMARK [3][]{subsubsection.242}{30.1.3 Feedback-Linearisierung}{subsection.239}% 166
+\BOOKMARK [3][]{subsubsection.243}{30.1.4 Harmonische-Linearisierung}{subsection.239}% 167
+\BOOKMARK [2][]{subsection.244}{30.2 Reglerentwurf mittels exakter Eingangs-/Ausgangslinearisierung}{section.238}% 168
+\BOOKMARK [3][]{subsubsection.245}{30.2.1 Bei maximalem relativen Grad \040=n \040von SISO-Systemen}{subsection.244}% 169
+\BOOKMARK [3][]{subsubsection.247}{30.2.2 Bei reduziertem relativen Grad \040<n \040von SISO-Systemen}{subsection.244}% 170
+\BOOKMARK [2][]{subsection.248}{30.3 Exakte Zustandslinearisierung}{section.238}% 171
+\BOOKMARK [2][]{subsection.249}{30.4 Nonlinear Model predictive control \(NMPC\)}{section.238}% 172
+\BOOKMARK [2][]{subsection.250}{30.5 Flachheitsbasierter Ansatz}{section.238}% 173
+\BOOKMARK [2][]{subsection.253}{30.6 Gain-scheduling-Regler}{section.238}% 174
+\BOOKMARK [2][]{subsection.256}{30.7 Control-Ljapunov-Funktionen}{section.238}% 175
+\BOOKMARK [2][]{subsection.257}{30.8 Backstepping-Verfahren}{section.238}% 176
+\BOOKMARK [2][]{subsection.258}{30.9 Sliding-Mode-Regelung}{section.238}% 177
+\BOOKMARK [1][]{section.259}{31 Regelstrukturen}{section.184}% 178
+\BOOKMARK [2][]{subsection.260}{31.1 Kaskadenregelung}{section.259}% 179
+\BOOKMARK [1][]{section.261}{32 Vektorregelung}{section.184}% 180
+\BOOKMARK [2][]{subsection.262}{32.1 Adaptive Regelung}{section.261}% 181
+\BOOKMARK [-1][]{part.263}{VI Informatik}{}% 182
+\BOOKMARK [0][]{section.264}{33 Matlab}{part.263}% 183
+\BOOKMARK [-1][]{part.265}{VII Ber\374hmte Wissenschaftler}{}% 184
+\BOOKMARK [0][]{section*.266}{15'th century}{part.265}% 185
+\BOOKMARK [1][]{subsection.267}{33.1 Leonardo da Vinci 1452-1519}{section*.266}% 186
+\BOOKMARK [2][]{subsection.268}{33.2 Nikolaus Kopernikus 1473-1543}{subsection.267}% 187
+\BOOKMARK [1][]{section*.269}{16'th century}{section*.266}% 188
+\BOOKMARK [2][]{subsection.270}{33.3 Galileo Galilei 1564-1642}{section*.269}% 189
+\BOOKMARK [2][]{subsection.271}{33.4 Johannes Keppler 1571-1630}{section*.269}% 190
+\BOOKMARK [1][]{section*.272}{17'th century}{section*.266}% 191
+\BOOKMARK [2][]{subsection.273}{33.5 Isaac Newton 1643-1727}{section*.272}% 192
+\BOOKMARK [1][]{section*.274}{18'th century}{section*.266}% 193
+\BOOKMARK [2][]{subsection.275}{33.6 Carl Friedrich Gau\337 1777-1855}{section*.274}% 194
+\BOOKMARK [2][]{subsection.276}{33.7 Michael Faraday 1791-1867}{section*.274}% 195
+\BOOKMARK [1][]{section*.277}{19'th century}{section*.266}% 196
+\BOOKMARK [2][]{subsection.278}{33.8 Charles Darwin 1809-1882}{section*.277}% 197
+\BOOKMARK [2][]{subsection.279}{33.9 Gustav Robert Kirchhoff 1824-1887}{section*.277}% 198
+\BOOKMARK [2][]{subsection.280}{33.10 James Clerk Maxwell 1831-1879}{section*.277}% 199
+\BOOKMARK [2][]{subsection.281}{33.11 Thomas Alva Edison 1847-1931}{section*.277}% 200
+\BOOKMARK [2][]{subsection.282}{33.12 Nikola Tesla 1856-1943}{section*.277}% 201
+\BOOKMARK [2][]{subsection.283}{33.13 Heinrich Hertz 1857-1894}{section*.277}% 202
+\BOOKMARK [2][]{subsection.284}{33.14 Max Planck 1858-1947}{section*.277}% 203
+\BOOKMARK [2][]{subsection.285}{33.15 Albert Einstein 1879-1955}{section*.277}% 204
+\BOOKMARK [2][]{subsection.286}{33.16 Niels Bohr 1885-1962}{section*.277}% 205
+\BOOKMARK [1][]{section*.287}{20'th century}{section*.266}% 206
+\BOOKMARK [2][]{subsection.288}{33.17 Werner Heisenberg 1901-1976}{section*.287}% 207
+\BOOKMARK [2][]{subsection.289}{33.18 Stephen Hawking 1942-heute}{section*.287}% 208

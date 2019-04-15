@@ -1,0 +1,145 @@
+\documentclass[10pt,a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{esint} % für Umlaufintegral
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{subfigure} % Für mehrere Bilder in einer Figure
+\usepackage[width=17.00cm, height=25.00cm]{geometry}
+\geometry{verbose,a4paper,tmargin=20mm,bmargin=30mm,lmargin=16mm,rmargin=16mm}
+
+\usepackage{bm}										% Bold symbols \bm{math expression}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{ulem}
+\usepackage{mathtools}
+\usepackage{mcode}
+\usepackage{xcolor}
+\usepackage{tcolorbox} % Definition Umrahmung
+\usepackage{listings}
+\usepackage{ngerman}
+\usepackage{transparent}
+\usepackage{scrextend}
+\usepackage{epstopdf}
+\usepackage{trfsigns}
+\usepackage{enumerate}
+\usepackage[ngerman]{babel}
+\usepackage[autostyle=true,german=quotes]{csquotes}
+\usepackage{eso-pic}
+\usepackage{transparent}
+\usepackage[colorlinks, 				% Inhaltsverzeichnis verlinken
+			pdfpagelabels,
+			pdfstartview = FitH,
+			bookmarksopen = true,
+			bookmarksnumbered = true,
+			linkcolor = blue!40!black,
+			plainpages = false,
+			hypertexnames = false,
+			citecolor = black] {hyperref}
+\usepackage{mdwlist}
+\usepackage{enumitem}
+\setlist[description]{style = multiline,% Label Mehrzeilig zulassen					  
+					  font={\normalfont\itshape}}
+\usepackage{tikz}
+\usetikzlibrary{calc,angles,quotes,positioning}
+\usepackage{hyperref}
+
+
+
+\setcounter{secnumdepth}{4} % Kapiteltiefe einstellen
+\setcounter{tocdepth}{5}    % anzuzeigende Kapiteltiefen in ToC
+% Subparagraph nicht einrücken und Zeilenumbruch nach sub- und paragraph
+\RedeclareSectionCommand[indent=0pt]{subparagraph} 
+\RedeclareSectionCommands[beforeskip=-3.25ex plus-1ex minus -.2ex,% 
+afterskip=1\baselineskip plus 1ex minus .5ex]{paragraph,subparagraph} 
+
+\newlength{\datum}
+\newlength{\name}
+\newlength{\LL}
+\newlength{\RR}
+\newlength{\page}
+\settowidth{\datum}{\today}
+\settowidth{\name}{Heufelder Bernd}
+\settowidth{\LL}{}
+\settowidth{\RR}{}
+\settowidth{\page}{\thepage}
+\setlength{\LL}{0.5\textwidth-0.5\name-\datum}
+\setlength{\RR}{\textwidth-1.5\name-\datum-\LL-\page}
+
+% Kopf- und Fußzeile
+\usepackage{scrpage2}
+	\automark[section]{chapter}
+	\defpagestyle{test}{ 
+			{} {} {\headmark \hfill \textsc{Knowledge Database}\raisebox{-2mm}} % dritte Klammer: Definition Kopfzeile für alle Seiten
+			(\linewidth,0.1pt) % Lineinenlänge und dicke der Kopfzeile
+		}{                                                                                                     
+			(\linewidth,0.1pt) % Lineinenlänge und dicke der Fußzeile                                              
+			{} {} {\raisebox{-2mm}{\today \hspace{\LL} \textsc{Heufelder Bernd}  \hspace{\RR} \pagemark} } 
+		}                                                                                                       
+
+	
+% New Commands
+	\newcommand\BackgroundPic{%
+	\put(-150,-80){%
+		\parbox[b][\paperheight]{\paperwidth}{%
+			\vfill
+			\centering
+			{\transparent{0.05}\includegraphics[width=1.7\paperwidth,height=1.7\paperheight,%
+			keepaspectratio]{./pics/unilog.jpg}}%
+			\vfill
+	}}}
+	\newcommand\tab[1][0.3cm]{\hspace*{#1}}
+	
+	% Löschen von Teil vor den Kapitelnummerierung und Zentrierung
+	\renewcommand*{\partformat}{\thepart\autodot\enskip} 
+	\renewcommand\partheadstartvskip{\clearpage\null\vfil}
+	\renewcommand\partheadmidvskip{\par\nobreak\vskip 20pt\thispagestyle{empty}}
+	\renewcommand\partheadendvskip{\vfil\clearpage}
+	\renewcommand\raggedpart{\centering}
+
+% Umrahmung definieren
+\tcbset{fonttitle=\bfseries, colback=blue!3!black!4!white,colframe=blue!20!black}
+
+
+
+
+
+\begin{document}
+
+	\AddToShipoutPicture*{\BackgroundPic}
+	\ClearShipoutPicture
+	\pagestyle{test}
+	\begin{titlepage}
+		\begin{center}
+			\Huge \textbf{Knowledge Database} \\
+			\LARGE Wissensdatenbank			\\
+			\vspace{6cm} 
+			\flushright \textsc{\transparent{0.2} \Huge \grqq \huge The Greatest Enemy of Knowledge is not Ignorance, it is the Illusion of Knowledge \grqq}\\
+			\large \textsc{\transparent{0.2} - Stephen Hawking}\\
+			\vspace{5cm} 
+			\centering \Large \textbf{Author:} Heufelder Bernd		\\
+			\vspace{1cm} 
+			\large \textbf{Erstellungsdatum:} 17. Oktober 2016 \\
+			\vfill
+			\small \textsc{written in} \Large \LaTeX
+		\end{center}
+	\end{titlepage}
+
+\tableofcontents
+
+\include{Physik}
+\include{Mathematik}
+\include{Mechanik}
+\include{Elektrotechnik}
+\include{Regelungstechnik}
+\include{Informatik}
+\include{BeruehmteWissenschaftler}
+
+
+
+
+
+	
+
+\end{document}
