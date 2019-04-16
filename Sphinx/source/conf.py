@@ -37,7 +37,8 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
-	'nbsphinx']
+	'nbsphinx',
+	'RunNotebook']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -75,7 +76,7 @@ language = 'de'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = []
+exclude_patterns = ['mechanik/kinematik/files/.ipynb_checkpoints']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -176,3 +177,12 @@ mathjax_config = {
     'jax': ['input/TeX', 'output/HTML-CSS'],
 }
 
+# Run notebook configuration
+
+# The template used when exporting from nbconvert
+#   full  - Outputs the full HTML document [Default]
+#   basic - Outputs a single div (with no additional resources)
+run_notebook_export_template = 'basic'  # Default: 'full'
+
+# Display the source links to the generated evaluated files
+run_notebook_display_source_links = False  # Default: True

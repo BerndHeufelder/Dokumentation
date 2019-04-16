@@ -1,4 +1,4 @@
-Welcome to Besi Projekte und zugehoeriges Wissenswertes's documentation!
+Main Knowledge Database and Documentation collection.
 ########################################################################
 
 .. important::
@@ -9,9 +9,15 @@ Welcome to Besi Projekte und zugehoeriges Wissenswertes's documentation!
 	:download:`Knowledge Database <../../Knowledge Database/Knowledge_Database.pdf>`
 
 .. toctree::
-   :maxdepth: 4
-
-   kinematik/kinematik
+   :maxdepth: 2
+   :numbered:
+   :includehidden:
+   :caption: Contents:
+   
+   mechanik/main_mechanik
+   regelungstechnik/main_regelungstechnik
+   elektrotechnik/main_elektrotechnik
+   modellbildung/main_modellbildung
 
 
 
@@ -19,5 +25,3 @@ Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
