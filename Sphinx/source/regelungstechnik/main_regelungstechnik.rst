@@ -1,7 +1,7 @@
 Regelungstechnik
 *********************
 
-:download:`Digitale Regler <Digitale_Regler_V1.2 .pdf>`
+:download:`Digitale Regler <Digitale_Regler_V1.2.pdf>`
 
-.. image:: toc_Digitale_Regler_V1.2.png
+.. image:: toc_Digitale_Regler_V1.2.svg
 

@@ -1,6 +1,12 @@
+pushd %~dp0
+
+..\SW-Tools\pdf2svg\pdf2svg.exe ..\Sphinx\source\regelungstechnik\Digitale_Regler_V1.2.pdf ..\Sphinx\source\regelungstechnik\toc_Digitale_Regler_V1.2.svg 2
+
+
+
 @ECHO OFF
 
-pushd %~dp0
+
 
 REM Command file for Sphinx documentation
 
