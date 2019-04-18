@@ -61,6 +61,13 @@
 			\textbf{name.x} & als Rückgabewert erhält man die Benennung der Achse mit welchler man gerade verbunden ist \\ \rowcolor{gray!10!white}	
 			\textbf{ver.x} & Versionsnummer der gerade gewählten Achse (e.g. 0x316xxxx) -> die ersten 3 Ziffern sind die Versionsnummer und die darauf folgenden kennzeichnen die Revision \\	
 		\end{tabular}
+	\subsection{Undocumented Parameters}
+		\begin{tabular}{l|p{14cm}}
+			\rowcolor{gray!10!white}
+			\textbf{C9} & MLTI Multiplikator \\ \rowcolor{gray!10!white}	
+			\textbf{K260} &  \\	
+			\textbf{K261} &  \\	
+		\end{tabular}
 \section{Maschinenbedienung}
 \textbf{Kommandos und Tastenkombinationen\\\\}
 \begin{tabular}{l|p{14cm}}
@@ -69,11 +76,18 @@
 	\rowcolor{gray!10!white}
 	& \begin{itemize}
 		\item \textbf{konquer:} Öffnet File-Explorer des Maschinenpc's
+		\begin{itemize}
+			\item[+] Motion-Files (Seq., Reg., ...) sind im Pfad \textit{Datacon/share/config/Servotools}
+		\end{itemize}	
 	\end{itemize}	
 \end{tabular}
 
 \section{Servo Tools}
-	Erweiterung der Servotool durch Eingabe von \textit{servoToolsDialogExpertMode 2} in der Mushell. Z.B. für den Fall wenn sich Register-Files nicht vom PC auf den Controller updaten lassen, kann dies über die Servotools im Expert-Mode manuell geschehen.
+	Erweiterung der Servotool durch Eingabe von \textit{servoToolsDialogExpertMode 2} in der Mushell. Z.B. für den Fall wenn sich Register-Files nicht vom PC auf den Controller updaten lassen, kann dies über die Servotools im Expert-Mode manuell geschehen.\\\\
+	
+	expertMode -> Force overwrite\\\\
+	
+	Terminal -> Registerwerte auslesen
 
 \section{Servo-Bundle}
 	Ist ein .zip-File, in welchem sich das XML-File, sämtliche benötigte Register-Files, Sequenzen und Firmware-Files befinden. Auf jeder Maschine befindet sich das Gesamte zip-File. Ein Servobundle kann für alle Maschinenplatformen verwendet werden, da sich die besagten Files für alle Maschinen darin befinden. Jedes Servobundle hat ein version\_info.txt, in welchem die Änderungen der einzelnen Versionen gelistet sind.\\\\ Sequenzen müssen kompiliert werden bevor sie auf die Maschine überspielt werden. Um ein Kompilieren auf der Maschine zu umgehen wurde der Offline-Sequence-Compiler entworfen. Damit werden die .txt Files in .eseq Files umgewandelt. Im Servo-Bundle befinden sich nur die kompilierten Versionen der Sequenzen.
