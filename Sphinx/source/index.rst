@@ -1,4 +1,4 @@
-Main Knowledge Database and Documentation collection.
+Knowledge Database and Documentation collection.
 ########################################################################
 
 .. important::
