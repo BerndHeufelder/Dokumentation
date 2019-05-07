@@ -18,11 +18,18 @@ und keine Beschleunigung angesetzt.
 Robotik
 =======
 
-:download:`Statische EE-Kraft in Gelnekskräfte umrechnen <files/IntroductionToRobotics_Pearson_UMRECHNUNG_Endeffektorkraft_auf_Gelenksmomente.pdf>`
+.. admonition:: :download:`Statische EE-Kraft in Gelnekskräfte umrechnen <files/IntroductionToRobotics_Pearson_UMRECHNUNG_Endeffektorkraft_auf_Gelenksmomente.pdf>`
 
-.. image:: files/IntroductionToRobotics_Pearson_UMRECHNUNG_Endeffektorkraft_auf_Gelenksmomente-157.svg
-	:width: 32%
-.. image:: files/IntroductionToRobotics_Pearson_UMRECHNUNG_Endeffektorkraft_auf_Gelenksmomente-158.svg
-	:width: 32%
+	.. image:: files/IntroductionToRobotics_Pearson_UMRECHNUNG_Endeffektorkraft_auf_Gelenksmomente-157.svg
+		:width: 32%
+	.. image:: files/IntroductionToRobotics_Pearson_UMRECHNUNG_Endeffektorkraft_auf_Gelenksmomente-158.svg
+		:width: 32%
+		
+	Die Komponenten des Vektors :math:`f` der die Position des Endeffektors beschreibt, ergibt sich aus translatorischen und rotatorischen
+	Koordinatentransformationen vom Ursprungskoordinatensystem in das Endeffektorkoordinatensystem. Die Transformationsmatrix zur Umrechnung
+	kann anhand der Denavit-Hartenberger Transformation vorgenommen werden.
 	
+	.. image:: files/static_force_ee.jpg
+		:width: 100%
 	
+sad
