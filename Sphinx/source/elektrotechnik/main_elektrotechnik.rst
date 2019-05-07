@@ -7,9 +7,9 @@ Elektrotechnik
 	
 :download:`PMSM als Modell im dq-Koordinatensystem <PMSM_Modell_in_dq.pdf>`
 
-.. image:: PMSM_Modell_in_dq-i.svg
+.. image:: PMSM_Modell_in_dq-7.svg
 	:width: 32%
-.. image:: PMSM_Modell_in_dq-ii.svg
+.. image:: PMSM_Modell_in_dq-8.svg
 	:width: 32%
-.. image:: PMSM_Modell_in_dq-iii.svg
+.. image:: PMSM_Modell_in_dq-9.svg
 	:width: 32%

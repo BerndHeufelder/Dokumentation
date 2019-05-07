@@ -14,3 +14,15 @@ und keine Beschleunigung angesetzt.
 
 .. toctree:: 
    files/Breaking_distance.ipynb
+   
+Robotik
+=======
+
+:download:`Statische EE-Kraft in Gelnekskräfte umrechnen <files/IntroductionToRobotics_Pearson_UMRECHNUNG_Endeffektorkraft_auf_Gelenksmomente.pdf>`
+
+.. image:: files/IntroductionToRobotics_Pearson_UMRECHNUNG_Endeffektorkraft_auf_Gelenksmomente-157.svg
+	:width: 32%
+.. image:: files/IntroductionToRobotics_Pearson_UMRECHNUNG_Endeffektorkraft_auf_Gelenksmomente-158.svg
+	:width: 32%
+	
+	

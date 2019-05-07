@@ -10,8 +10,11 @@ for /r %%i in (*.pdf) do (
 	REM %%~pi path of current file in loop, %%~ni name of current file in loop, %%~xi file extension (.pdf)
 	
 	echo %%~ni
-	if "%%~ni" == "PMSM_Modell_in_dq" set list=i ii iii iv
+	set list=
+	if "%%~ni" == "PMSM_Modell_in_dq" set list=7 8 9
 	if "%%~ni" == "Digitale_Regler_V1.2" set list=1 2 3
+	if "%%~ni" == "input_shaping" set list=1 2 3
+	if "%%~ni" == "IntroductionToRobotics_Pearson_UMRECHNUNG_Endeffektorkraft_auf_Gelenksmomente" set list=157 158
 	
 	echo !list!
 	for %%u in (!list!) do (

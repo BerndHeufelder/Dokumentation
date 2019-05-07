@@ -1,8 +1,7 @@
 Knowledge Database and Documentation collection.
 ########################################################################
 
-.. important::
-	Die wichtigsten Latex-Dokumentationen:
+.. important:: 
 	
 	:download:`Besi Reminder Sheet <../../ReminderSheet/ReminderSheet.pdf>`
 	
@@ -19,10 +18,7 @@ Knowledge Database and Documentation collection.
    elektrotechnik/main_elektrotechnik
    modellbildung/main_modellbildung
    allgemein/allgemein
+   genindex
+   
 
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
