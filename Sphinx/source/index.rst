@@ -18,6 +18,7 @@ Knowledge Database and Documentation collection.
    regelungstechnik/main_regelungstechnik
    elektrotechnik/main_elektrotechnik
    modellbildung/main_modellbildung
+   allgemein/allgemein
 
 
 
