@@ -1,6 +1,15 @@
 Kinematik
 ***********
 
+
+Trajektorien
+=============
+
+.. admonition:: :download:`Continuous Acceleration and Duty Time <files/Continuous Acceleration and Duty Time.pdf>`
+
+	Berechnung der *Continuous Acceleration* anhand des *Duty Factors*.
+
+
 Bremsdistanz berechnen
 ======================
 
