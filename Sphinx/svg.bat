@@ -9,17 +9,20 @@ setlocal enabledelayedexpansion
 for /r %%i in (*.pdf) do (
 	REM %%~pi path of current file in loop, %%~ni name of current file in loop, %%~xi file extension (.pdf)
 	
-	echo %%~ni
 	set list=
 	if "%%~ni" == "PMSM_Modell_in_dq" set list=7 8 9
 	if "%%~ni" == "Digitale_Regler_V1.2" set list=1 2 3
-	if "%%~ni" == "input_shaping" set list=1 2 3
-	if "%%~ni" == "IntroductionToRobotics_Pearson_UMRECHNUNG_Endeffektorkraft_auf_Gelenksmomente" set list=157 158
-	
-	echo !list!
+	if "%%~ni" == "federn_lin_rot" set list=5
+REM	if "%%~ni" == "Continuous_Acceleration_and_Duty_Time" set list=1 2 3
+	if "%%~ni" == "input_shaping" set list=1
+REM	if "%%~ni" == "IntroductionToRobotics_Pearson_UMRECHNUNG_Endeffektorkraft_auf_Gelenksmomente" set list=157 158
+
+	echo "%%~ni / pages to convert: !list!"
 	for %%u in (!list!) do (
+		echo "       %%u: %%~ni-%%u.svg"
 		%dir_pdf2svg% "%%~pi%%~ni.pdf" "%%~pi%%~ni-%%u.svg" %%u
 	)
+	echo "--------------------------------------------------"
 )
 endlocal
 
