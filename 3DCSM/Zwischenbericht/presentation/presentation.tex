@@ -1,0 +1,452 @@
+%------Document Class------------
+\pdfminorversion=4
+\documentclass[10pt,xcolor=dvipsnames]{beamer}
+\makeatletter\let\ifGm@compatii\relax\makeatother %workaround to enforce compatibility of different versions of the
+
+\include{preambel/preambel}
+\include{preambel/preambel-graphics}
+\include{preambel/commands}
+\bibliography{./preambel/books}
+
+%------Presentation Mode------------
+\newcommand{\pathtostylefile}{}
+\mode<presentation> {\usepackage{beamerthemeiace}}
+
+%---------Title,Author,Date----------
+\title{3DCSM - Body Handling}
+\author{}
+\date{}
+
+% My Packages
+\usepackage{amsmath,amssymb}
+\usepackage{relsize}
+\usepackage{graphicx}
+\usepackage{media9} 
+\usepackage{tikz}
+\usepackage[overload]{empheq}
+\usetikzlibrary{arrows, matrix, trees, mindmap, positioning}
+\usepackage{arydshln}
+\usepackage{animate}
+\usepackage{anyfontsize}
+\newcommand{\tikzfnt}{13}
+
+
+\begin{document}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+{
+\setbeamertemplate{footline}{}
+\begin{frame}
+	\titlepage
+\end{frame}
+}
+\addtocounter{framenumber}{-1}
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+\begin{frame}
+    %\tableofcontents[hideallsubsections]
+    \tableofcontents
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+\AtBeginSection[]{
+\begin{frame}
+      \tableofcontents[current, currentsubsection]
+\end{frame}
+}
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+\section{Ziel des Arbeitspaketes}
+	\begin{frame}{Ziele des Arbeitspaketes}
+		\textbf{Erstellen eines dynamischen Modells für das Body-Handling}
+		\begin{itemize}
+			\item Abbildung des dynamischen Systemverhaltens, statische Aspekte stehen dabei im Hintergund
+			\item Das Modell mit Abstraktion des Motors über Momentenvorgabe ist verfügbar
+			\item Die um das Motormodell ergänzte Modellstruktur ist fertiggestellt
+			\item Die Modelle sind dokumentiert
+		\end{itemize}
+	\end{frame}
+
+\section{Reduziertes Modell}
+	\subsection{Modell mit Parameter}
+		\begin{frame}{Ebenes 2d-Modell}
+			\begin{itemize}
+				\item Ziel: Einfache und möglichst genau dynamische Abbildung des realen Systems
+				\item Rechtfertigung für ein ebenes Modell: Kein Freiheitsgrad in x-Richtung
+			\end{itemize}
+			\begin{minipage}{0.48\textwidth}
+				\begin{figure}
+					\includegraphics[width=0.9\linewidth]{./pics/aufbau_cad.png}
+				\end{figure}
+			\end{minipage}
+			\hfill
+			\begin{minipage}{0.48\textwidth}
+				\vspace{-0.2cm}
+				\begin{figure}
+					\includegraphics[width=0.7\linewidth]{./pics/SchematischesModell.eps}
+				\end{figure}
+			\end{minipage}
+		\end{frame}
+
+		\begin{frame}{Gesamtmodell}
+		\begin{minipage}{0.58\textwidth}
+			Generalisierte Koordinaten des Modells
+			\[ \bm{q} = [y(t), z(t), \varphi(t), \theta(t), \alpha(t), g(t), \rho(t)]^{T} \]
+			Geometrische Parameter in $ m $\\\vspace{10pt} \def\arraystretch{1.2}
+			\begin{tabular}{lll}
+				$ l_{m}=0.1 $ & $ l_{z}=0.701 $ &  \\ 
+				$ l_{x}=0.079 $ & $ l_{w}=0.06 $ & $ l_{b}=0.0286 $\\
+			\end{tabular}
+			Massen in $ kg $\\\vspace{10pt} \def\arraystretch{1.2}
+			\begin{tabular}{lll}
+				$ m_{m}=7.62 $ & $ m_{x}=4.87 $ & $ m_{w}=2.37 $   \\ 
+				$ m_{b}=0.024 $ & $ m_{z} = 77.3 $ &\\
+			\end{tabular}
+			Massenträgheitsmomente um X-Achse in $ kgm^{2} $\\\vspace{10pt} \def\arraystretch{1.2}
+			\begin{tabular}{lll}
+				$ J_{x}=0.0126 $ & $ J_{w}=0.0138 $ & $ J_{y} = 0.063 $ \\ 
+				$ J_{b}=0.0000077 $  & $ J_{z}=7.191 $&  \\
+			\end{tabular}
+			Federkonstanten\\\vspace{10pt} \def\arraystretch{1.3}
+			\begin{tabular}{ll}
+				$ k_{wr}=217.19\frac{kNm}{rad} $ & $ k_{br}=34.9\frac{kNm}{rad} $ \\ 
+				$ k_{wt}=6069\frac{kN}{m} $ & $ k_{zr}=2902.4\frac{kNm}{rad} $ \\   
+			\end{tabular}
+		\end{minipage}
+		\hfill
+		\begin{minipage}{0.38\textwidth}
+			\begin{figure}
+				\includegraphics[width=1\linewidth]{./pics/SchematischesModell.eps}
+			\end{figure}
+		\end{minipage}
+		\end{frame}
+
+	\subsection{Auswahl charakteristischer Federsteifigkeiten}
+		\begin{frame}
+			\includegraphics[width=\linewidth,page=10]{./pics/swarovski.pdf}
+		\end{frame}
+
+		\begin{frame}{\small Berücksichtigung charakteristischer Federsteifigkeiten}
+                          \textbf{\color{umitblau}Auslenkung Bodyholder infolge externer Kraft} 
+					\begin{align*}
+					k_{Mx} &= 34.9\frac{kNm}{rad}, F_{ext}=20N, l=0.075m, r=0.0286m\\
+					M_{ext} &= 0.075\cdot20 = 1.5Nm, \quad \rho = \frac{M_{ext}}{k_{Mx}} = 42\mu rad\\
+					\Delta z &= \rho\cdot l=\bm{3.15\mu m}\quad \Delta y=\rho\cdot r=\bm{1.20\mu m}
+					\end{align*}
+                  \begin{columns}[totalwidth=\textwidth]
+			\begin{column}{0.7\textwidth}
+                          \textbf{\color{umitblau}Auslenkung Bodyholder infolge Trägheit} 
+                                        \begin{align*}
+                                          M_g &=m_b\cdot g \cdot r =6.7\text{Nmm},\quad \rho = \frac{M_{g}}{k_{Mx}} = 0.193\mu rad\\
+                                          \Delta y&=\rho\cdot r=\bm{5.52 n m}
+                                        \end{align*}
+                                      \end{column}
+			\hfill
+			\begin{column}{0.28\textwidth}
+				\begin{figure}
+					\includegraphics[width=0.6\linewidth]{./pics/bodyHolder.eps}
+				\end{figure}
+			\end{column}
+                      \end{columns}
+                          \textbf{\color{umitblau}Eigenfrequenz} 
+                          \begin{align*}                                         					f_{0} &= \bm{5687.2 Hz} \quad \text{ mit leichtem Bodyholder } m_b=0.024kg
+                          \end{align*}
+		\end{frame}
+
+		
+		\begin{frame}{\small Berücksichtigung charakteristischer Federsteifigkeiten}
+			\begin{minipage}{0.7\textwidth}
+				\begin{itemize}
+					\item Axialkraft Bodyholder (Konussteifigkeit)
+					\begin{align*}
+					k_{Fz} &= 6069\frac{kN}{m}, \quad F_{ext}=20N,\quad \Delta z = \frac{F_{ext}}{k_{Fz}} = \bm{3.3\mu m}\\
+					\bm{f_{0}} &= \bm{2515.4 Hz} \quad \text{ mit leichtem Bodyholder } 0.024kg 
+					\end{align*}
+					\item Verkippung RotBody-Achse (ausschließlich aufgrund der Lagersteifigkeit, Welle selbst als Starrkörper angenommen)
+					\begin{align*}
+					k_{Mx} &= 217.19\frac{kNm}{rad}, \quad F_{ext}=20N, \quad l=0.06m\\
+					M_{ext} &= 0.06\cdot20 = 1.2Nm,\quad \theta = \frac{M_{ext}}{k_{Mx}} = 5.525\mu rad\\
+					\Delta y &= \theta\cdot l=\bm{0.33\mu m}\\ 
+					f_{0} &= \bm{516.5 Hz} \text{ ohne Bodyholder}
+					\end{align*}
+					
+				\end{itemize}
+			\end{minipage}
+			\hfill
+			\begin{minipage}{0.28\textwidth}
+				\begin{figure}
+					\includegraphics[width=0.4\linewidth]{./pics/rotBody.eps}\\\vspace{0.5cm}
+				\end{figure}
+			\end{minipage}
+		\end{frame}
+	
+		\begin{frame}{\small Berücksichtigung charakteristischer Federsteifigkeiten}
+		\begin{minipage}{0.7\textwidth}
+			\begin{itemize}
+				\item Biegung RotX-Achse
+				\begin{align*}
+				k_{Mx} &= 315\frac{kNm}{rad}, \quad F_{ext}=20N, \quad l=0.079m\\
+				M_{ext} &= 0.079\cdot20 = 1.58Nm\\
+				\varphi &= \frac{M_{ext}}{k_{Mx}} = 5\mu rad\\
+				\Delta y &= \theta\cdot l=\bm{0.396\mu m}\\
+				f_{0} &= \bm{543.9 Hz} \quad \text{nur mit Masse } m_{x} \text{ ohne } m_{w}, m_{b}  
+				\end{align*}
+				\item RotX Axialkraft
+				\begin{align*}
+				k_{Fy} &= 57597\frac{kN}{m}, \quad F_{ext}=20N\\
+				\Delta y &= \frac{F_{ext}}{k_{Fy}} = \bm{0.35\mu m}\\
+				f_{0} &= \bm{547.34 Hz} \quad \text{ebenfalls nur mit Masse } m_{x}  
+				\end{align*}
+			\end{itemize}
+		\end{minipage}
+		\hfill
+		\begin{minipage}{0.28\textwidth}
+			\begin{figure}[t]
+				\includegraphics[width=1\linewidth]{./pics/rotX.eps}
+			\end{figure}
+		\end{minipage}
+		\end{frame}
+
+\section{Herleitung der Bewegungsgleichungen}
+	\begin{frame}
+		Aufstellen der kinetischen und den potentiellen Energien
+		\begin{align*}
+			T_{t}&= \frac{1}{2}\bigg(m_{m}v_{com_{m}}^{2} +m_{d}v_{com_{d}}^{2}+m_{w}v_{com_{w}}^{2}+m_{b}v_{com_{b}}^{2}\bigg)\\  
+			T_{r}&= \frac{1}{2}\bigg(J_{z}\dot{\alpha}^{2}+J_{x}(\dot{\alpha}+\dot{\varphi})^{2} +J_{w}(\dot{\alpha}+\dot{\varphi}+\dot{\theta})^{2} +J_{b}(\dot{\alpha}+\dot{\varphi}+\dot{\theta}+ \dot{\rho})^{2}\bigg)\\   
+			U_{t} &= \frac{1}{2}k_{wt}g(t)^{2}\\
+			U_{r} &= \frac{1}{2}\bigg(k_{zr}\alpha(t)^{2}+ k_{wr}\theta(t)^{2}+k_{br}\rho(t)^2\bigg)\\
+		\end{align*}
+		Lagrange-Gleichung
+		\begin{equation*}
+			L = T_{t}+T_{r} - (U_{t}+U_{r})
+		\end{equation*}
+		Dissipationsfunktionen:
+		\begin{align*}
+		D_{t} &= \frac{1}{2}d_{wt}\dot{g}(t)^{2}, \quad
+		D_{r} = \frac{1}{2}\bigg(d_{zr}\dot{\alpha}(t)^{2} + d_{wr}\dot{\theta}(t)^{2} + d_{br}\dot{\rho}(t)^{2}\bigg)\\
+		D_{ges} &= D_{t} + D_{r}\\
+		\end{align*}
+	\end{frame}
+
+	\begin{frame}
+		Generalisierte Kräfte:
+		\begin{align*}
+			Q & = [F_{y}, F_{z}, M_{\varphi},0 , 0, 0, 0]^{T}
+		\end{align*}
+		Lagrange Gleichung 2. Art:
+		\[\frac{d}{dt}\bigg(\frac{\partial L}{\partial \bm{\dot{q}}} \bigg) -\frac{\partial L}{\partial \bm{q}} + \frac{\partial D_{ges}}{\partial \bm{\dot{q}}} = Q \]
+		\begin{align*}
+			M = \frac{\partial}{\partial\bm{\dot{q}}}\frac{\partial L}{\partial\bm{\dot{q}}}, \quad 
+			C = \frac{\partial}{\partial\bm{q}}\frac{\partial L}{\partial\bm{\dot{q}}}, \quad
+			F = \frac{\partial L}{\partial\bm{q}}, \quad 
+			D = \frac{\partial D}{\partial\bm{\dot{q}}} \\
+		\end{align*}
+		\[ M\bm{\ddot{q}} + C\bm{\dot{q}} - F = Q - D\]
+		\begin{equation*}
+			\Rightarrow \bm{\ddot{q}}=  - M^{-1}C\bm{\dot{q}} + M^{-1}F + M^{-1}Q - M^{-1}D
+		\end{equation*}
+		\begin{itemize}
+			\item Zur Simulation des Systems werden die Bewegungsdifferentialgleichungen in Form von DGL 1. Ordnung übergeben 
+		\end{itemize}
+	\end{frame}
+
+\section{Vorwärtskinematik}
+	\begin{frame}{Vorwärtskinematik}
+		\begin{itemize}
+			\item Ziel: Darstellung der Position des Bodies
+		\end{itemize}
+		Transformationsmatrizen
+		\begin{align*}
+			T_{0y} &= \begin{bmatrix}\cos\alpha & -\sin\alpha & 0\\\sin\alpha & \cos\alpha & z_{Feder}\\0&0&1 \end{bmatrix}, \quad
+			T_{ym} = \begin{bmatrix}-\cos\varphi & \sin\varphi & y(t)+rx_{y0}\\\sin\varphi & \cos\varphi & z(t)+rx_{z0}\\0&0&1 \end{bmatrix}\\
+			T_{mw} &= \begin{bmatrix}\cos(\theta) & -\sin(\theta) & lx_{y}\\\sin(\theta) & \cos(\theta) & lx_{z}\\0&0&1 \end{bmatrix}, \qquad
+			T_{wb} = \begin{bmatrix}\cos\rho & -\sin\rho & dy\\\sin\rho & \cos\rho & l_{w}+g(t)+l_{b}\\0&0&1 \end{bmatrix}\\
+			T_{0b}&= T_{0y}\cdot T_{ym}\cdot T_{mw}\cdot T_{wb}
+		\end{align*}
+		Ausgangspunkt: Ursprung $ \bm{r_{0}} = [0, 0]^{T} $
+		\begin{align*}
+			\begin{bmatrix}\bm{r_{b}}\\1\end{bmatrix} = T_{0b}\cdot\begin{bmatrix}\bm{r_{0}}\\1\end{bmatrix}
+		\end{align*}
+	\end{frame}
+
+\section{Ergebnisse}
+	\begin{frame}{Vergleich der Eigenfrequenzen}
+		Eigenfrequenzen in Abhängigkeit verschiedener Stellungen der RotX-Achse\\\vspace{0.5cm}
+		\begin{minipage}{0.48\textwidth}
+			\centering
+			\includegraphics[width=0.99\linewidth]{./pics/eigenfreq_test.png}
+			Simulation
+		\end{minipage}
+		\hfill
+		\begin{minipage}{0.48\textwidth}
+			\centering
+			\includegraphics[width=0.99\linewidth]{./pics/eigenfreq_ref.png}
+			FEM-Simulation
+		\end{minipage}
+	\vspace{0.5cm}
+		\begin{itemize}
+			\item Zur Bestimmung der Eigenfrequenzen wurde kein Regler verwendet. Achsen wurden starr ausgelegt.
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Simulationsszenarien}
+		\begin{minipage}{0.58\textwidth}
+			\textbf{Gilt für alle Simulationsszenarien}
+			\begin{itemize}
+				\item Simulationszeit: $ t_{0} = 0, \quad T = 400ms $
+				\item Bewegungsdauer: $ 200ms $
+				\item Ausgangs- und Zielposition sind identisch. Die Orientierung der RotX-Achse wird jedoch geändert.
+					\begin{align*}
+					ee(t) &= [y(t), z(t), \varphi(t)]\\
+					ee(t=0) &= [0.04m,0.826m,90^{\circ}]\\
+					ee(t=T) &= [0.04m,0.826m,0^{\circ}]
+					\end{align*}	
+				\item PID Regler für jede Achskoordinate (sehr steif ausgelegt)
+				\item Regelung mit Vorsteuerung und computed torque
+				\item Vorgabe Bestückposition und -orientierung für $ t_{0} $ und $ T $, Umrechnung und Bahnplanung in Gelenkskoordinaten
+			\end{itemize}
+		\end{minipage}	
+		\hfill
+		\begin{minipage}{0.39\textwidth}
+			\vspace{-0.2cm}
+			\begin{figure}
+				\includegraphics[width=1.1\linewidth]{./pics/input_starr.png}
+			\end{figure}
+		\end{minipage}
+	\end{frame}
+
+	\begin{frame}{Simulationsszenarien}
+		\begin{minipage}{0.58\textwidth}
+			\textbf{Übersicht der Simulationsszenarien}
+			\begin{itemize}
+				\item \textcolor{blue!60!black}{Simulation 1:} Starres System
+				\item \textcolor{blue!60!black}{Simulation 2:} Nur der Unterbau schwingt, restliches System ist starr (nur Biegefeder $ k_{zr} $)
+				\item \textcolor{blue!60!black}{Simulation 3:} Unterbau und RotBody-Achse sind schwingungsfähig (Biegefedern $ k_{zr} $ und $ k_{wr} $)
+				\item \textcolor{blue!60!black}{Simulation 4:} Vorsteuerung mit Input-shaping	
+		\end{itemize}
+		\end{minipage}
+		\hfill
+		\begin{minipage}{0.38\textwidth}
+			\begin{figure}
+				\includegraphics[width=1.1\linewidth]{./pics/SchematischesModell.eps}
+			\end{figure}
+		\end{minipage}		
+	\end{frame}
+
+	\begin{frame}{Simulation 1 - starres System}
+		Fehlergrößenverlauf für die Simulation des starren Systems
+		\vspace{-0.2cm}
+		\begin{figure}
+			\includegraphics[width=0.99\linewidth]{./pics/posVerlaufAchsen_starr.png}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}{Simulation 1 - starres System}
+		Bahnverlauf des Bestückpunktes in der Ebene (links), Fehlerverlauf der Bestückposition und -orientierung zur Referenzbahn (rechts)
+		\vspace{-0.2cm}
+		\begin{figure}
+			\includegraphics[width=0.999\linewidth]{./pics/endeffektor_starr.png}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}{Simulation 2 - schwingender Unterbau}
+		Fehlergrößenverlauf für die Simulation mit schwingendem Unterbau durch die Biegefeder $ k_{zr} $
+		\vspace{-0.2cm}
+		\begin{figure}
+			\includegraphics[width=0.99\linewidth]{./pics/posVerlaufAchsen_nurZ.png}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}{Simulation 2 - schwingender Unterbau}
+		Bahnverlauf des Bestückpunktes in der Ebene (links), Fehlerverlauf der Bestückposition und -orientierung zur Referenzbahn (rechts)
+		\vspace{-0.2cm}
+		\begin{figure}
+		\includegraphics[width=0.999\linewidth]{./pics/endeffektor_nurZ.png}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}{Simulation 3}
+		Fehlergrößenverlauf für die Simulation mit schwingendem Unterbau und schwingender RotBody-Achse
+		\vspace{-0.2cm}
+		\begin{figure}
+			\includegraphics[width=0.99\linewidth]{./pics/posVerlaufAchsen_ZundTheta.png}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}{Simulation 3}
+		Bahnverlauf des Bestückpunktes in der Ebene (links), Fehlerverlauf der Bestückposition und -orientierung zur Referenzbahn (rechts)
+		\vspace{-0.2cm}
+		\begin{figure}
+		\includegraphics[width=0.999\linewidth]{./pics/endeffektor_ZundTheta.png}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}{Simulation 4 - Vorsteuerung mit Input-shaping}
+		Fehlergrößenverlauf für die Simulation mit schwingendem Unterbau und schwingender RotBody-Achse
+		\vspace{-0.2cm}
+		\begin{figure}
+			\includegraphics[width=0.99\linewidth]{./pics/posVerlaufAchsen_shift.png}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}{Simulation 4 - Vorsteuerung mit Input-shaping}
+	\vspace{-0.1cm}
+		Bahnverlauf des Bestückpunktes in der Ebene (links), Fehlerverlauf der Bestückposition und -orientierung zur Referenzbahn (rechts)
+		\vspace{-0.2cm}
+		\begin{figure}
+		\includegraphics[width=0.9\linewidth]{./pics/endeffektorZoom_shift.png}
+		\end{figure}
+		\begin{itemize}
+			\item $ 10Hz $ Fehler an Eigenfrequenz
+		\end{itemize}
+	\end{frame}
+
+\section{Verbesserungen des Modells}
+	\begin{frame}{\small Berücksichtigung der Steifigkeits-Deviationsanteile}
+		\begin{minipage}{0.68\textwidth}
+			\textbf{Problem:}
+			\begin{itemize}
+				\item Deviationsanteile der Steifigkeitsmatrix sind für die Rot-Body-Achse nicht vernachlässigbar
+			\end{itemize}
+			\textbf{Lösung:}
+			\begin{itemize}
+				\item Annahme: Für das dynamische Verhalten sind die einwirkenden Momente sehr gering
+				\item Idee: Verformung durch nur eine Drehfeder abbilden, wobei die Position und die Steifigkeit der Feder so gewählt wird, dass das gewünschte Verhalten erreicht wird  
+				\item 2. Schritt: Abstimmung der beiden Stäbe auf die Gesamtmasse, Gesamtlänge, resultierender Schwerpunkt und Eigenfrequenz 
+			\end{itemize}
+		\end{minipage}
+		\hfill
+		\begin{minipage}{0.3\textwidth}
+			\begin{figure}
+				\includegraphics[width=0.7\linewidth]{./pics/rotBody_idea.eps}
+			\end{figure}
+		\end{minipage}
+		
+	\end{frame}
+
+\section{Next Steps}
+	\begin{frame}{Next Steps}
+		\textbf{Die nächsten sinnvollen Schritte vom jetzigen Stand des Modells aus:}
+		\begin{enumerate}
+			\item Elektrischer Teil des Motormodells implementieren
+			\item Daten für Spindelantrieb berücksichtigen (Steigung, Gesamtübersetzung)
+			\item Parameteridentifikation am Aufbau
+		\end{enumerate}
+	\end{frame}
+
+%\section{Offene Fragen}
+%	\begin{frame}{Offene Fragen}
+%	\textbf{Unklarheiten der FEM-Simulationen}
+%	\begin{enumerate}
+%		\item Fersteifigkeit RotBody-Welle nur in Kombination mit Konussteifigkeit und Lagersteifigkeit verfügbar?
+%	\end{enumerate}
+%	\end{frame}
+
+\end{document}
+
+

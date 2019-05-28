@@ -1,3 +1,5 @@
+
+
 @ECHO OFF
 REM Command file for Sphinx documentation
 
@@ -7,6 +9,9 @@ if "%SPHINXBUILD%" == "" (
 set SOURCEDIR=source
 set BUILDDIR=build
 set SPHINXPROJ=BesiProjekteundzugehoerigesWissenswertes
+
+set dir_3DCSM="..\..\3DCSM\Code-Doku\make html"
+%dir_3DCMS%
 
 if "%1" == "" goto help
 

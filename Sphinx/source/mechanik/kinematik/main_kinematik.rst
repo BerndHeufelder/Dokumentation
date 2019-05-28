@@ -5,7 +5,7 @@ Kinematik
 Trajektorien
 =============
 
-.. admonition:: :download:`Continuous Acceleration and Duty Time <files/Continuous Acceleration and Duty Time.pdf>`
+.. admonition:: :download:`Continuous Acceleration and Duty Time <files/Continuous_Acceleration_and_Duty_Time.pdf>`
 
 	Berechnung der *Continuous Acceleration* anhand des *Duty Factors*.
 

@@ -27,7 +27,7 @@ http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions
 
 **Beispiel:**
 
-.. code::
+.. code:: c
 
 	.. admonition:: And, by the way...
 
@@ -49,13 +49,13 @@ Requirement-Liste erstellen
 Modul `pireqs <https://pypi.org/project/pipreqs/>`_ zur automatischen Erzeugung einer Liste von benötigten Modulen
 für ein bestimmtes Projekt erstellen.
 
-.. code::
+.. code:: c
 
 	$ pip install pipreqs
 
 Durch den Befehl
 	
-.. code::
+.. code:: c
 
 	$ pipreqs /path/to/project/folder
 	
