@@ -21,9 +21,9 @@ Input Shaping
 
 .. admonition:: :download:`Input Shaping <input_shaping.pdf>`
 
-	.. image:: input_shaping-1.svg
+	.. image:: input_shaping_hand.jpg
+		:width: 27%
+	.. image:: input_shaping-2.png
 		:width: 32%
-	.. image:: input_shaping-2.svg
-		:width: 32%
-	.. image:: input_shaping-3.svg
+	.. image:: input_shaping-3.png
 		:width: 32%

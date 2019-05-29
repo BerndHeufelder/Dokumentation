@@ -11,7 +11,7 @@ Beispiele: `Admonitions,Headings,Code,Footnotes,Citation,Comments,Tables,Body-El
 ^^^^^^^^^^^^^^
 * # with overline, for parts
 
-* * with overline, for chapters
+* \* with overline, for chapters
 
 * =, for sections
 
@@ -27,7 +27,7 @@ http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions
 
 **Beispiel:**
 
-.. code:: c
+.. code:: none 
 
 	.. admonition:: And, by the way...
 
@@ -49,13 +49,13 @@ Requirement-Liste erstellen
 Modul `pireqs <https://pypi.org/project/pipreqs/>`_ zur automatischen Erzeugung einer Liste von benötigten Modulen
 für ein bestimmtes Projekt erstellen.
 
-.. code:: c
+.. code:: none
 
 	$ pip install pipreqs
 
 Durch den Befehl
 	
-.. code:: c
+.. code:: none
 
 	$ pipreqs /path/to/project/folder
 	
