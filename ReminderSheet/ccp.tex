@@ -28,12 +28,13 @@
 			Die Identification und Variant kann über Dip-Switches am CB geändert werden. 
 		
 	\subsection{Konfiguration}
-		Die Konfiguration geschieht anhand von zwei \textit{.dt2} Files, die auf dem MaschinenPC liegen. Im Source-Code ist der Pfad zu diesen Files hinterlegt. 
-
-
-
-
-		Ausgangsfiles sind ObjectsDefinition.dtx und \_Objects.dtx und werden durch den dtx-Prozessor in ein Port00-file und ein Konfigurationsfile umgewandelt.
+		Die Konfiguration eines Hammer-Boards geschieht anhand von zwei \textit{.dt2} Files, die auf dem MaschinenPC liegen.
+		
+		Im Source-Code ist der Pfad zu diesen Files hinterlegt. Diese \textit{.dt2} Files sind von Indel und werden direkt vom COP-MAS gelsen.
 		\\\\
-		3 verschiedene ObjectDefinitions bis auf Gain, Offset und Port Nummer.
-		\\\\
+		Um den Konfigurationsaufwand zu erleichtern werden die Beiden \textit{.dt2} Files von Besi aus mehreren \textit{.dtx} Files erzeugt. Es wird also ein neues Front-End geschaffen, das handlicher zu ändern sein wird.
+		
+
+
+
+	
