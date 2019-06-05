@@ -19,11 +19,14 @@ Input Shaping
 .. index::
 	single: Input shaping
 
-.. admonition:: :download:`Input Shaping <input_shaping.pdf>`
+.. admonition:: :download:`Input Shaping <input_shaping/input_shaping.pdf>`
 
-	.. image:: input_shaping_hand.jpg
+	.. image:: input_shaping/input_shaping_hand.jpg
 		:width: 27%
-	.. image:: input_shaping-2.png
+	.. image:: input_shaping/input_shaping-2.png
 		:width: 32%
-	.. image:: input_shaping-3.png
+	.. image:: input_shaping/input_shaping-3.png
 		:width: 32%
+		
+	.. toctree:: 
+	   input_shaping/jupyterNotebook/input_shaping.ipynb
