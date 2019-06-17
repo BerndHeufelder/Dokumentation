@@ -34,7 +34,38 @@
 		\\\\
 		Um den Konfigurationsaufwand zu erleichtern werden die Beiden \textit{.dt2} Files von Besi aus mehreren \textit{.dtx} Files erzeugt. Es wird also ein neues Front-End geschaffen, das handlicher zu ändern sein wird.
 		
-
+	\subsection{File-Schlacht}
+		\subsubsection{\_Objects}
+			Dieses File wird automatisch von der Software erstellt, deshalb kann es nicht so einfach ins AxisDefinition integriert werden.
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=0.8\linewidth]{./pics/ccp/_objects.png}
+				\caption{}
+				\label{}
+			\end{figure}
+		\subsubsection{AxisDefinition}
+			Hier wird z.b. beim MHPusher auf des Registerfile und die Speedsets dieser Achse verwiesen. Diesen liegen im Subfolder \textit{./Axis}.
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=0.9\linewidth]{./pics/ccp/axisdefinition.png}
+				\caption{}
+				\label{}
+			\end{figure}
+		\subsubsection{ObjectsDefinitions}
+			Es gibt 3 verschiedene Typen an ObjetsDefinition-files:
+			\begin{itemize}
+				\item ObjectsDefinitions
+				\item ObjectsDefinitions-MotX-DC
+				\item ObjectsDefinitions-MotX-Servo
+				\item ObjectsDefinitions-MotX-Stepper
+			\end{itemize}
+			In den MotX-Files sind die auf den Motor bezogenen INPUT und OUTPUT Bits den jeweiligen Variablen zugeordnet, wie sie im IO\_Sheet hinterlegt sind. Im \textit{ObjectsDefinitions} sind die Bits für sonstige IO-Signale definiert.
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=0.3\linewidth]{./pics/ccp/objectsDefinitionServo.png}
+				\caption{}
+				\label{}
+			\end{figure}
 
 
 	
