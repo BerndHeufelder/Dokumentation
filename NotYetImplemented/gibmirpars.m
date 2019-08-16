@@ -36,7 +36,7 @@ if ty > tx  % Parameter der X-Achse müssen runterskalliert werden
         %ax1=ax1/x;
     end
         
-    if w > 0 | x > 0
+    if w > 0 || x > 0
        y=max(w,x);
        vx1=vx1/y;
        vy1=vy1/y;
