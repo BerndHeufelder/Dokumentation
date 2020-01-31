@@ -1,0 +1,40 @@
+\part{General}
+
+	\textbf{Overview of to parameters to take into account}\label{param}
+		\begin{itemize}
+			\item Moving mass
+			\item Maximum rotational speed
+			\begin{itemize}
+				\item of motor 
+				\item regarding electrical frequency of output stage
+				\item of spindle or belt if present
+			\end{itemize}
+			\item Maximum acceleration
+			\item Mechanical losses
+			\begin{itemize}
+				\item Static friction
+				\item Viscous friction
+				\item Efficiency (Spindel, Belt, ...)
+			\end{itemize}
+			\item Required Accuracy
+		\end{itemize}
+	\leavevmode\\
+	
+	\textbf{General method}
+		\begin{enumerate}
+			\item Estimate system parameters from section \ref{param}
+			\item Calculate required torque for desired trajectory 
+			\item Compare required torque over speed against the manufacturers reference curve
+		\end{enumerate}
+	\leavevmode\\
+	
+	\textbf{List of occured issues}\leavevmode\\\\
+		\begin{tabular}{p{4cm}p{12cm}}
+			\rowcolor{gray!10!white}
+			\textbf{Efficiency of indirect linear spindel axis} & 
+			For fully assembled indirect-linear-spindle-drives from Nanotec a force over speed curve is provided. The spindle efficiency is already taken into account in the force-speed curve.
+			\\\hline&\\
+			\rowcolor{gray!00!white}
+			\textbf{Max rotational Speed of Stepper Motors} & 
+			Stepper motors are usually not built for high speed applications. Therefore it is understandable that the torque-reference-curve is only correct for rotational speeds up to 700rpm. Above that speed, the from Nanotec given torques are usullay not achieved. \\\hline&\\
+		\end{tabular}

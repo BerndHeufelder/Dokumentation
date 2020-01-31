@@ -1,0 +1,57 @@
+% !TeX spellcheck = <none>
+\documentclass[a4paper, 12pt]{article}  
+
+\usepackage[a4paper, margin=2cm, bmargin=2.5cm, tmargin=2.5cm]{geometry}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tgcursor}
+
+\usepackage{amsmath,amssymb,amstext}
+\usepackage{color, colortbl}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{scrextend}
+\usepackage[linkcolor=black,
+			hidelinks]{hyperref}
+\usepackage{array}
+\usepackage{tcolorbox}
+\usepackage{trfsigns}
+\setcounter{tocdepth}{3}  
+\setlength{\arrayrulewidth}{0.1pt}
+\setlength{\parindent}{0pt}
+
+\newcommand{\myGreen}{green!50!black}
+\newcommand{\myGray}{black!50}
+\newcommand{\colBox}[1]{\colorbox{gray!20}{\textcolor{green!50!black}{#1}}}
+
+\begin{document}
+	\begin{titlepage}
+		\center 
+		\textsc{\huge \bfseries Merkzettel, Reminder Sheet}\\[1cm] 
+		\textsc{\Large }\\[0.5cm] 
+		\textsc{\large Author: Bernd Heufelder}\\[0.5cm] 
+		{\large \today}\\[1cm] 
+		\includegraphics[width=0.3\linewidth]{./pics/BesiLogo.jpg}\\[1cm]
+		\begin{flushleft}
+			\tableofcontents
+		\end{flushleft}
+	\end{titlepage}
+	
+	\part{Pragmatisches}
+	\input{praxis.tex}
+	\input{company.tex}
+	
+	\newpage
+	\part{Projektspezifisch}
+	\input{ccp.tex}
+	\clearpage
+	\input{UAC.tex}
+	\clearpage
+	\input{TC_heater}
+	\newpage
+	\input{Jumbo}
+	\part{Theorie}
+	\input{theorie.tex}
+\end{document}

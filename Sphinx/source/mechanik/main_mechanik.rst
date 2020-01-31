@@ -17,6 +17,13 @@ Federn und Dämpfer
 	* Federsteifigkeit
 	* Eingenfrequenz
 	* Hintereinanderschaltung von Federn
+	
+	.. image:: files/federn_lin_rot_1.png
+		:width: 32%
+	.. image:: files/federn_lin_rot_2.png
+		:width: 32%
+	.. image:: files/federn_lin_rot_3.png
+		:width: 32%
 
 
 Kinematik

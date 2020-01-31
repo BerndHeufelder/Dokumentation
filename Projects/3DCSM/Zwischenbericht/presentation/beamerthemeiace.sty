@@ -1,0 +1,121 @@
+%----------------------------------------------------------------------------------------
+%	IACE
+%----------------------------------------------------------------------------------------
+\institute{Institute of Automation and Control Engineering\\UMIT, Hall in Tirol, Austria}
+
+\RequirePackage{tikz}
+%%%% COLOR SETTINGS%%%
+
+%DEFINE COLOR%
+\definecolor{umitblau}{rgb}{0.004 0.328 0.582}
+\definecolor{umitgrau}{RGB}{156,156,156}
+\definecolor{titletext}{RGB}{255,255,255}
+
+%SET COLOR%
+\setbeamercolor{footline}{fg=umitgrau}
+\setbeamercolor{title}{fg=umitblau}
+\setbeamercolor{institute}{fg=umitblau}
+\setbeamercolor{footline}{fg=umitblau}
+\setbeamercolor{headbox}{fg=white,bg=umitblau}
+\setbeamercolor{frametitle}{fg=white,bg=umitblau}
+\setbeamercolor{section in toc}{bg=white,fg=umitblau}
+\setbeamercolor{subsection in toc}{bg=white,fg=umitgrau}
+
+\setbeamercolor{item}{fg=umitblau}
+\setbeamercolor{block title}{fg=umitblau,bg=white}
+\setbeamercolor{block body}{fg=black,bg=white}
+\setbeamercolor{exampleblock title}{fg=green,bg=white}
+\setbeamercolor{definitionblock title}{fg=green,bg=white}
+%\setbeamercolor{definition body}{fg=black,bg=green}
+
+\setbeamercolor{caption name}{fg=umitblau,bg=white}
+\setbeamercolor{bibliography entry author}{fg=umitblau,bg=white}
+\setbeamercolor{bibliography entry journal}{fg=umitblau,bg=white}
+\setbeamercolor{bibliography entry note}{fg=umitblau,bg=white}
+
+%%%SIZE SETTINGS%%%
+\setbeamersize{text margin left=5mm,text margin right=5mm}
+
+%%%FONT SETTINGS%%%
+\usefonttheme{professionalfonts}
+\setbeamerfont{title}{size=\huge}
+\setbeamerfont{frametitle}{size={\fontsize{11pt}{0}}}
+\setbeamerfont{block title}{size={\fontsize{10pt}{0}}}
+
+\newcommand*{\shifttext}[2]{%
+  \settowidth{\@tempdima}{#2}%
+  \makebox[\@tempdima]{\hspace*{#1}#2}%
+}
+
+\newcommand{\headerbox}[1]{\setlength{\unitlength}{1cm}\colorbox{umitblau}{\makebox(#1){}}}
+
+\newcommand\varRa{0.38}
+\newcommand\varA{0.4}
+\newcommand\varH{0.42}
+\newcommand\varOff{0.0}
+
+\newcommand{\leftbox}{
+\begin{tikzpicture}
+    \draw[fill=umitblau, color=umitblau] (0, -\varOff) -- (0.7, -\varOff) -- (0.7, \varH-\varOff) -- (0, \varH-\varOff);
+\end{tikzpicture}
+}
+
+\newcommand{\midbox}{
+\begin{tikzpicture}
+    \draw[fill=umitblau, color=umitblau] (0, -\varOff) -- (7.7, -\varOff) -- (7.7, \varH-\varOff)  -- (0, \varH-\varOff);
+    \node[anchor=west] at (0.2,0.21) {\usebeamerfont{frametitle}\textcolor{titletext}{\vphantom{$\varphi_2^{1}$}\rlap\insertframetitle}};
+\end{tikzpicture}
+}
+
+\newcommand{\rightbox}{
+\begin{tikzpicture}
+    \draw[fill=umitblau, color=umitblau] (0, -\varOff) rectangle (1.15, \varH-\varOff);
+\end{tikzpicture}
+}
+
+%%%HEADLINE%%%
+\setbeamertemplate{frametitle}{}
+\setbeamertemplate{headline}{\vspace*{2mm}
+\hskip0pt
+\shifttext{-0.26cm}{\mbox{
+\raisebox{0.5mm}{\leftbox}
+\shifttext{-0.52cm}{\raisebox{0.04mm}{\includegraphics[height=0.63cm]{\pathtostylefile images/iace.pdf}}}
+\shifttext{-0.925cm}{\midbox}
+\shifttext{-0.9cm}{\raisebox{-1.85mm}{\includegraphics[height=6.8mm]{\pathtostylefile images/logo_umit.pdf}}}
+\shifttext{-3.05cm}{\raisebox{0.5mm}{\rightbox}}
+}}
+}
+
+%%%FOOTLINE%%%
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \hrule
+  \hbox{%
+  \begin{beamercolorbox}[wd=0.92\paperwidth,ht=2.25ex,dp=1ex,left]{umitblau}%
+    \hspace*{2ex}
+    \insertshortauthor
+    \hfill
+    \insertshorttitle
+    \hfill
+    \insertshortdate{}
+    \hfill
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=0.08\paperwidth,ht=2.25ex,dp=1ex,right]{umitblau}%
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+%%%TABLE OF CONTENTS%%%
+
+%SECTION%
+\setbeamertemplate{section in toc}[square]
+ 
+%SUBSECTION%
+\setbeamertemplate{subsection in toc}{
+\hspace{1.5em}{\color{umitblau}\rule[0.4ex]{3pt}{3pt}}~\inserttocsubsection\par}
+
+%%%INNERTHEME%%%
+\useinnertheme{default}
+
+%%%BLOCK DEFINITIONS%%%%

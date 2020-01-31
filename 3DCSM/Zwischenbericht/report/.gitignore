@@ -1,7 +1,0 @@
-*.log
-/3DCSM_documentation.pdf
-/3DCSM_documentation.log
-*.aux
-*.synctex.gz
-*.toc
-/iace.report.cls

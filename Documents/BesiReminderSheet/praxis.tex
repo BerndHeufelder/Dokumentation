@@ -1,0 +1,115 @@
+\section{Verbindungsaufbau mit der Maschine}
+	\begin{itemize}
+		\item PuttY starten
+		\item Maschinenname eingeben, z.B. fc-4438
+		\item Benutzername: ses\\
+	  Passwort: dmsu
+		\item Mushell starten
+		\item In der Mushell: Ultimet\_startETNE eingeben um Maschine "freizuschalten"
+		\item Im Port-File muss die Maschine definiert sein, dann kann übers Dropdown-Menü die Verbindung/Maschine ausgewählt werden um eine Verbindung herzustellen.
+	\end{itemize}
+	Beispiele für \textit{port.properties} Einträge verschiedener Maschinen. Die Grünen Einträge sind immer gleich und rot ist variabel.
+	\begin{itemize}
+		\item \textbf{FlipChip (fc)/8k8}
+		\begin{addmargin}[0.2cm]{0cm}
+			\begin{tabular}{lp{11cm}}
+				port.\textcolor{red}{8}.name=\textcolor{red}{fc-4169} & \textcolor{\myGray}{Beliebiger Name, diser wird im Dropdown Menü angezeigt}\\
+				port.\textcolor{red}{8}.driver=\textcolor{red}{etn://fc-4169:1160} & \textcolor{\myGray}{Maschinenname, muss mit der Beschilderung auf der Maschine übereinstimmen}\\
+				port.\textcolor{red}{8}.protocol=\textcolor{\myGreen}{ETB}&\\
+				port.\textcolor{red}{8}.accept.0.driver=\textcolor{\myGreen}{ETN:0}&\\
+				port.\textcolor{red}{8}.start=\textcolor{\myGreen}{auto}&\\
+			\end{tabular}
+		\end{addmargin}
+		\item \textbf{Lupus Testunit}
+		\begin{addmargin}[0.2cm]{0cm}
+			\begin{tabular}{lp{11cm}}
+				port.\textcolor{red}{8}.name=\textcolor{red}{Lupus testunit-401} & \\
+				port.\textcolor{red}{8}.driver=\textcolor{red}{etn://testunit-401:1160} &\\
+				port.\textcolor{red}{8}.protocol=\textcolor{\myGreen}{ETB}&\\
+				port.\textcolor{red}{8}.accept.0.driver=\textcolor{\myGreen}{ETN:0}&\\
+				port.\textcolor{red}{8}.start=\textcolor{\myGreen}{auto}&\\
+			\end{tabular}
+		\end{addmargin}
+		\item \textbf{Evo/2k2}
+		\begin{addmargin}[0.2cm]{0cm}
+			\begin{tabular}{lp{9cm}}
+				port.\textcolor{red}{8}.name=\textcolor{red}{EVO 2-modulig evo-005089 } & \textcolor{\myGray}{Beliebiger Name, diser wird im Dropdown Menü angezeigt}\\
+				port.\textcolor{red}{8}.driver=\textcolor{red}{etn://evo-005089:1160} & \\
+				port.\textcolor{red}{8}.protocol=\textcolor{\myGreen}{ETB}&\\
+				port.\textcolor{red}{8}.accept.0.driver=\textcolor{\myGreen}{ETN:0}&\\
+				port.\textcolor{red}{8}.start=\textcolor{\myGreen}{auto}&\\
+			\end{tabular}
+		\end{addmargin}
+		\item \textbf{Beliebige Maschine}
+		\begin{addmargin}[0.2cm]{0cm}
+			\begin{tabular}{lp{9cm}}
+				port.\textcolor{red}{8}.name=\textcolor{red}{VCB-02\_ssd} & \textcolor{\myGray}{Als Beispiel die VCB-Maschine}\\
+				port.\textcolor{red}{8}.driver=\textcolor{red}{etn://10.10.18.109:1160} & \textcolor{\myGray}{Statt Maschinenname kann auch direkt über die IP-Adresse verbunden werden}\\
+				port.\textcolor{red}{8}.protocol=\textcolor{\myGreen}{ETB}&\\
+				port.\textcolor{red}{8}.accept.0.driver=\textcolor{\myGreen}{ETN:0}&\\
+				port.\textcolor{red}{8}.start=\textcolor{\myGreen}{auto}&\\
+			\end{tabular}
+		\end{addmargin}
+	\end{itemize}
+\section{Maschineninbetriebnahme}
+	Prinzipiell wird das Phasing aller Achsen durchgeführt. Überprüfung aller Encoder. Können alle Achsen gehomed werden? Die Regelung ist bereits getuned.
+	
+	\subsection{Neue Maschine inbetriebnehmen}
+		Noch nicht fertig ...
+		\begin{itemize}
+			\item Achsen mit neuen Motoren, Encodern oder sonstige Änderungen, die auf die Regelung einspielen neu Inbetriebnehmen (NEW SETTING, ComET-Tools)
+			\item Vorgänger Registerfiles testen falls es keine groben Änderungen sind
+			\item XML-File erweitern
+			\item Servo-File-Packer
+			\item Release New Servo-Bundle
+			\item ...
+		\end{itemize}
+\section{ComET Command Prompt}
+	\subsection{Hilfreiche Kommandos}
+		Rufzeichen $ ! $ für alle Achsen und $ .x $ führt das Kommando nur für die aktuell ausgewählte Achse aus.\\\\
+		\begin{tabular}{l|p{14cm}}
+			\rowcolor{gray!10!white}
+			\textbf{name.x} & als Rückgabewert erhält man die Benennung der Achse mit welchler man gerade verbunden ist \\ \rowcolor{gray!10!white}	
+			\textbf{ver.x} & Versionsnummer der gerade gewählten Achse (e.g. 0x316xxxx) -> die ersten 3 Ziffern sind die Versionsnummer und die darauf folgenden kennzeichnen die Revision \\	
+		\end{tabular}
+	\subsection{Undocumented ETEL Parameters}
+		\begin{tabular}{l|p{14cm}}
+			\rowcolor{gray!10!white}
+			\textbf{C9} & MLTI Multiplikator (2=200$ \mu s $,3=200$ \mu s $,4=800$ \mu s $) \\ 	
+			\textbf{K260} & Widerstand terminal to terminal in $ mH $\\	
+			\rowcolor{gray!10!white}
+			\textbf{K261} & Induktivität terminal to terminal in $ \Omega $\\	
+		\end{tabular}
+\section{Maschinenbedienung}
+\textbf{Kommandos und Tastenkombinationen\\\\}
+\begin{tabular}{l|p{14cm}}
+	\rowcolor{gray!10!white}
+	\textbf{Strg+Shift+F2} & Run Application (z.b. zum Start vom Indel-INCO-Explorer )\\
+	\rowcolor{gray!10!white}
+	& \begin{itemize}
+		\item \textbf{konquer:} Öffnet File-Explorer des Maschinenpc's
+		\begin{itemize}
+			\item[+] Motion-Files (Seq., Reg., ...) sind im Pfad \textit{Datacon/share/config/Servotools}
+		\end{itemize}	
+	\end{itemize}	
+\end{tabular}
+
+\section{Servo Tools}
+	Erweiterung der Servotool durch Eingabe von \textit{servoToolsDialogExpertMode 2} in der Mushell. Z.B. für den Fall wenn sich Register-Files nicht vom PC auf den Controller updaten lassen, kann dies über die Servotools im Expert-Mode manuell geschehen.\\\\
+	
+	expertMode -> Force overwrite\\\\
+	
+	Terminal -> Registerwerte auslesen
+
+\section{Servo-Bundle}
+	Ist ein .zip-File, in welchem sich das XML-File, sämtliche benötigte Register-Files, Sequenzen und Firmware-Files befinden. Auf jeder Maschine befindet sich das Gesamte zip-File. Ein Servobundle kann für alle Maschinenplatformen verwendet werden, da sich die besagten Files für alle Maschinen darin befinden. Jedes Servobundle hat ein version\_info.txt, in welchem die Änderungen der einzelnen Versionen gelistet sind.\\\\ Sequenzen müssen kompiliert werden bevor sie auf die Maschine überspielt werden. Um ein Kompilieren auf der Maschine zu umgehen wurde der Offline-Sequence-Compiler entworfen. Damit werden die .txt Files in .eseq Files umgewandelt. Im Servo-Bundle befinden sich nur die kompilierten Versionen der Sequenzen.
+	\subsection{XML-File}
+		Im XML-File sind für jede einzelne Maschine die Folgenden Zuweisungen für jede Achse definiert
+		\begin{itemize}
+			\item Auf welchem Controller-Typ hängt die Achse
+			\item Welche Controller-ID hat die Achse
+			\item Mit welcher Firmware soll die Achse laufen
+			\item Welche Sequence läuft für die Achse
+			\item Welches Register-File ist der Achse zugewiesen
+			\item Welches Homing und Phasing soll die Achse verwenden
+		\end{itemize}

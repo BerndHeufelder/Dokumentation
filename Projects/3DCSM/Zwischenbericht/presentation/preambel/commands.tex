@@ -1,0 +1,112 @@
+%%% ----------------------------------------------------------------
+% ============================================================
+% Definition of mathematic commands
+% ============================================================
+\renewcommand{\vector}[1]{\left[\begin{array}{c}#1\end{array}\right]}       % vector
+\newcommand{\pvector}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\newcommand{\mats}[1]{\ensuremath{\left( \begin{smallmatrix} #1 \end{smallmatrix} \right)}} % small matrix for use in the text
+%\renewcommand{\vector}[1]{\begin{array}{*{1}}#1\end{array}}
+\renewcommand{\matrix}[2]{\left[\begin{array}{#1}#2\end{array}\right]}      % matrix, \matrix{*{4}{c}}{}
+%\renewcommand{\bmatrix}[2]{\left[\begin{array}{#1}#2\end{array}\right]}
+% symbol style
+%\let\Oldvec\vec \renewcommand{\vec}[1]{\ensuremath{\Oldvec{#1}}}
+\newcommand{\mat}[1]{\ensuremath{\mathbf{#1}}}
+\let\Oldvec\vec \renewcommand{\vec}[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand{\modulo}[1]{\ensuremath{~~({\rm mod}~#1)}}
+\newcommand{\intd}[1]{{\rm d}#1}                     % the d in the integral
+\newcommand{\dint}[1]{{\rm d}#1}
+\newcommand{\dd}[1]{{\rm d}#1}                     % the d in the integral
+\newcommand{\divergence}[1]{{\rm div}(#1)} % divergence
+\newcommand{\dotp}[2]{<#1,#2>}
+\newcommand{\ident}{\mat{I}}                     % identity matrix
+\newcommand{\pderi}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}}                     % partial derivative
+\newcommand{\ppderi}[2]{\ensuremath{\frac{\partial^2 #1}{\partial #2^2}}}                     % partial derivative
+\newcommand{\deri}[2]{\ensuremath{\frac{{\rm d}#1}{{\rm d}#2}}}                     % partial derivative
+%\newcommand{\exp}[1]{exp(#1)}
+\newcommand{\laplace}{\ensuremath{\triangle}}                                            % laplace operator
+\newcommand{\kroneker}{\ensuremath{\delta_\vartriangle}}                                            % laplace operator
+\newcommand{\dirac}{\ensuremath{\delta}}                                            % dirac delta function
+\newcommand{\conj}[1][non]{\ensuremath{ \ifthenelse{\equal{#1}{non}}{\ast}{#1^\ast} } }                                            % conjugate complex
+\newcommand{\conv}{\ensuremath{\ast}}
+\newcommand{\degree}[1][non]{\ensuremath{\ifthenelse{\equal{#1}{non}}{^\circ}{#1^\circ}}}
+\newcommand{\I}{\ensuremath{j}}
+
+% alternative symbol for Fourier Transform \mathcal{F}
+\newcommand{\FT}[1][non]{\ensuremath{\mathfrak F\ifthenelse{\equal{#1}{non}}{}{ \left\{ #1 \right\}}}}
+\newcommand{\IFT}[1][non]{\ensuremath{\mathfrak F^{-1}\ifthenelse{\equal{#1}{non}}{}{ \left\{ #1 \right\} }} }
+% usage of the optional parameter: \IFT[f_x] and $\IFT\{f_x\}$ are equivalent and \IFT[non] and \IFT are equivalent
+%  \FT[\frac{A^{C^e}}{B}]
+
+\newcommand{\sumsum}[1]{\sum_{i=1}^{n}\sum_{j=1}^{m}{#1}}
+\newcommand{\sinc}{\mbox{sinc}}                                             % sinc
+\def\sgn{\mathop{\rm sgn}}
+
+%\newcommand{\atan}[1][non]{\tan^{-1}\ensuremath{\ifthenelse{\equal{#1}{non}}{}{ \left( #1 \right)}}}
+\newcommand{\atan}[1][non]{\arctan\ensuremath{\ifthenelse{\equal{#1}{non}}{}{ \left( #1 \right)}}}
+\newcommand{\tr}[1]{\mbox{tr}\left( #1 \right)}                                                 % trace of an matrix
+\renewcommand{\det}[1]{\mbox{det}\left( #1 \right)}                                                 % trace of an matrix
+\newcommand{\argmin}[1]{\arg\min_{#1}\ }                            % argmin
+\newcommand{\E}[1][non]{\ensuremath{\ifthenelse{\equal{#1}{non}}{E}{E\left\{ #1 \right\}}}}
+\newcommand{\N}[3][]{\ensuremath{\mathcal{N}^{#1}(#2,#3)}} % normal distribution
+%\newcommand{\chis}[2][]{\ensuremath{\chi^2(#1,#2)}} % chi-sqauare distribution
+\newcommand{\chis}[2][non]{\ensuremath{\chi^2 \ifthenelse{\equal{#1}{non}}{}{ \left(#1,#2\right)}}}
+\newcommand{\CN}[3][]{\ensuremath{\mathcal{N}_\circ^{#1}(#2,#3)}} % von Mises distribution, circular normal
+%\newcommand{\R}[2][xx]{\ensuremath{R_{#1}\left( #2 \right)}} % correlation
+\newcommand{\R}[2][xx]{\ensuremath{R_{#1}\ifthenelse{\equal{#2}{}}{}{\left( #2 \right)}}} % correlation
+%\newcommand{\S}[2][xx]{\ensuremath{S_{#1}\left( #2 \right)}} % spectral density
+\renewcommand{\S}[2][xx]{\ensuremath{S_{#1}\ifthenelse{\equal{#2}{}}{}{\left( #2 \right)}}} % spectral density
+\newcommand{\Gammaf}[1][non]{\ensuremath{\Gamma\ifthenelse{\equal{#1}{non}}{}{ \left( #1 \right)}}}
+\newcommand{\varrhob}{\overline{\varrho}} % rho bar
+
+%\newcommand{\E}[1][non]{\ensuremath{E\left\{ #1 \right\}}}
+
+\def\mm{\hspace{-1.5mm}\rule[1mm]{1.3mm}{0.15mm}\rule{0.2mm}{0mm}\relax}    % short minus symbol
+
+% Defintionen, Theoreme
+\newtheorem{defi}{Definition}
+\newtheorem{satz}{Satz}
+\newtheorem{hsatz}{Hilfssatz}
+
+\newtheoremstyle{style1} 
+   {}                   %Space above 
+   {}                   %Space below 
+   {}                      %Body font: original {\normalfont} 
+   {}                      %Indent amount (empty = no indent, 
+                           %\parindent = para indent) 
+   {\normalfont\itshape}  %Thm head font original {\normalfont\bfseries} 
+   {.}                     %Punctuation after thm head original : 
+   { }              %Space after thm head: " " = normal interword 
+                           %space; \newline = linebreak 
+   {}%\textbf{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}}                     
+                                        %Thm head spec (can be left empty, meaning 
+                           %`normal') original {\underline{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}} 
+  
+\newtheoremstyle{style2} 
+   {3pt}                   %Space above 
+   {3pt}                   %Space below 
+   {}                      %Body font: original {\normalfont} 
+   {}                      %Indent amount (empty = no indent, 
+                           %\parindent = para indent) 
+   {\normalfont\bfseries}  %Thm head font original {\normalfont\bfseries} 
+   {}                     %Punctuation after thm head original : 
+   {\newline}              %Space after thm head: " " = normal interword 
+                           %space; \newline = linebreak 
+   {\textbf{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}}                     
+                                        %Thm head spec (can be left empty, meaning 
+                           %`normal') original {\underline{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}} 
+
+\newenvironment{conditions}
+  {\par\vspace{\abovedisplayskip}\noindent
+   \tabularx{\columnwidth}{>{$}l<{$} @{${}={}$} >{\raggedright\arraybackslash}X}}
+  {\endtabularx\par\vspace{\belowdisplayskip}}
+ 
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
+
+\newcommand{\footnoteWithoutNum}[1]{
+    \renewcommand{\thefootnote}{}
+    \footnotetext{\scriptsize#1}
+    \renewcommand{\thefootnote}{\arabic{footnote}}
+}
+

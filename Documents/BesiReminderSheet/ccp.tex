@@ -1,0 +1,80 @@
+\section{Common Control Platform (CCP)}
+	
+	\subsection{Hardware}
+		\textbf{Indelprodukte}
+		\begin{itemize}
+			\item \textbf{COP-MAS2:} Das CPU-Board ist die zentrale Kontrolleinheit einer Indel Steuerung. Das CPU-Board koordiniert die Achsen und I/O-Systeme in Echtzeit. Alle Indel CPU-Boards werden mit dem Indel Echtzeitbetriebssystem INOS betrieben, dadurch ist es möglich, die gesamte Maschinenapplikation direkt auf dem CPU-Board zu implementieren. Das INOS Betriebssystem übernimmt die Abstraktion der gesamten Hardware und ermöglicht es damit, die gleiche Applikationssoftware auf beliebigen Indel CPU-Boards auszuführen.
+			\item \textbf{SAC:} Endstufe zur Motoransteuerung mit integriertem Netzteil
+			\item \textbf{SAM4:} High-End Alternative zum COP-MAS mit einer möglichen closed-loop frequenz bis $ 64kHz $.
+		\end{itemize}
+		\textbf{Besi-Produkte:}
+		\begin{itemize}
+			\item \textbf{Hammer S3 mit Connection-Board:} Äquivalente Endstufe zum SAC von ESEC selbstentwickelt.
+			\item \textbf{UCB: } Notfalleinheit falls COP-MAS ausfällt übernimmt das UCB-Board die Steuerung
+		\end{itemize}
+		\begin{figure}[!h]
+			\centering
+			\includegraphics[width=0.85\linewidth]{./pics/ccp/mixed_struktur.png}
+			\caption{Gemischte Struktur aus Indel und ETEL Controller}
+		\end{figure}
+	
+		\subsubsection{Kompatibilität Hammer und Connection-Board}
+			Beim Starten werden die ID`s der Hammer-Firmware und die ID des Connection-Boards (CB) verglichen. Die ID des CB's ist im Flashspeicher auf dem Board gespeichert. Das Board T128 benötigt dazu die Firmware N128 auf dem Hammer. 
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[width=0.8\linewidth]{./pics/ccp/connectionboard.png}
+				\caption{ID Übereinstimmung}
+			\end{figure}
+			Die Identification und Variant kann über Dip-Switches am CB geändert werden. 
+		
+	\subsection{Maschinenbedienung}
+		Indel INCO-Explorer öffnen \\
+		$ \rightarrow $ Unter Cmd die Funktion Create Target den Maschinennamen und den MasterType auswählen\\ 
+		$ \rightarrow $ dann auf den f() - Button drücken um sich mit der Maschine bzw. dem COP-MAS zu verbinden.
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=\linewidth]{./pics/ccp/connect.png}
+			\caption{Verbindungsaufbau zu COP-MAS}
+		\end{figure}
+	\subsection{Konfiguration}
+		Die Konfiguration eines Hammer-Boards geschieht anhand von zwei \textit{.dt2} Files, die auf dem MaschinenPC liegen.
+		
+		Im Source-Code ist der Pfad zu diesen Files hinterlegt. Diese \textit{.dt2} Files sind von Indel und werden direkt vom COP-MAS gelsen.
+		\\\\
+		Um den Konfigurationsaufwand zu erleichtern werden die Beiden \textit{.dt2} Files von Besi aus mehreren \textit{.dtx} Files erzeugt. Es wird also ein neues Front-End geschaffen, das handlicher zu ändern sein wird.
+		
+	\subsection{File-Schlacht}
+		\subsubsection{\_Objects}
+			Dieses File wird automatisch von der Software erstellt, deshalb kann es nicht so einfach ins AxisDefinition integriert werden.
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=0.8\linewidth]{./pics/ccp/_objects.png}
+				\caption{}
+				\label{}
+			\end{figure}
+		\subsubsection{AxisDefinition}
+			Hier wird z.b. beim MHPusher auf des Registerfile und die Speedsets dieser Achse verwiesen. Diesen liegen im Subfolder \textit{./Axis}.
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=0.9\linewidth]{./pics/ccp/axisdefinition.png}
+				\caption{}
+				\label{}
+			\end{figure}
+		\subsubsection{ObjectsDefinitions}
+			Es gibt 3 verschiedene Typen an ObjetsDefinition-files:
+			\begin{itemize}
+				\item ObjectsDefinitions
+				\item ObjectsDefinitions-MotX-DC
+				\item ObjectsDefinitions-MotX-Servo
+				\item ObjectsDefinitions-MotX-Stepper
+			\end{itemize}
+			In den MotX-Files sind die auf den Motor bezogenen INPUT und OUTPUT Bits den jeweiligen Variablen zugeordnet, wie sie im IO\_Sheet hinterlegt sind. Im \textit{ObjectsDefinitions} sind die Bits für sonstige IO-Signale definiert.
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=0.3\linewidth]{./pics/ccp/objectsDefinitionServo.png}
+				\caption{}
+				\label{}
+			\end{figure}
+
+
+	

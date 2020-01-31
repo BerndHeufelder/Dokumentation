@@ -1,0 +1,60 @@
+% !TeX spellcheck = <none>
+\documentclass[a4paper, 10pt]{scrartcl}  
+
+\usepackage[width=17.00cm, height=25.00cm]{geometry}
+\geometry{verbose,a4paper,tmargin=20mm,bmargin=20mm,lmargin=20mm,rmargin=20mm}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tgcursor}
+
+\usepackage{amsmath,amssymb,amstext}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{scrextend}
+\usepackage[colorlinks, 				% Inhaltsverzeichnis verlinken
+			pdfpagelabels,
+			pdfstartview = FitH,
+			bookmarksopen = true,
+			bookmarksnumbered = true,
+			linkcolor = blue!40!black,
+			plainpages = false,
+			hypertexnames = false,
+			citecolor = black] {hyperref}
+\usepackage{array}
+\usepackage{tcolorbox}
+\usepackage{trfsigns}
+\usepackage{transparent}
+\usepackage{eso-pic}
+
+\setcounter{tocdepth}{3}  
+\setlength{\arrayrulewidth}{0.1pt}
+\setlength{\parindent}{0pt}
+
+% Umrahmung definieren
+\tcbset{fonttitle=\bfseries, colback=black!1!,colframe=green!50!black!40!}
+
+\begin{document}
+	\begin{titlepage}
+		\AddToShipoutPicture*{\put(-150,-80){%
+		\parbox[b][\paperheight]{\paperwidth}{%
+			\vfill
+			\centering
+			{\transparent{0.01}\includegraphics[width=1.7\paperwidth,height=1.7\paperheight,%
+				keepaspectratio]{./pics/unilog.jpg}}%
+				\vfill	}}}
+		\ClearShipoutPicture
+		\center 		
+		\textsc{\huge \bfseries Latex Template}\\[1cm] 
+		\textsc{\Large Documentation}\\[0.5cm] 
+		\textsc{\large Author: Bernd Heufelder}\\[0.5cm] 
+		{\large \today}\\[1cm] 
+		\includegraphics[width=0.3\linewidth]{./pics/BesiLogo.jpg}\\[1cm]
+		\begin{flushleft}
+			\tableofcontents
+		\end{flushleft}
+	\end{titlepage}
+
+
+\end{document}

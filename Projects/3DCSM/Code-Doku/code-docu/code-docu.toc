@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}Bewegungsgleichung erstellen}{3}
+\contentsline {section}{\numberline {2}Simulation des Modells}{3}
+\contentsline {paragraph}{\color@box {}{green!50!black!30}{oSim = Simulation():}}{3}
+\contentsline {paragraph}{\color@box {}{green!50!black!30}{oSim.integrate():}}{3}
+\contentsline {paragraph}{\color@box {}{green!50!black!30}{oSim.save\_results():}}{4}
+\contentsline {paragraph}{\color@box {}{green!50!black!30}{oSim.analyse\_mech\_eigenfreq():}}{4}
+\contentsline {section}{\numberline {3}Ergebnisse darstellen und visualisieren}{4}

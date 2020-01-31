@@ -1,0 +1,35 @@
+\section{Jumbo}
+\subsubsection{Keywords}
+\begin{tabular}{lp{15cm}}
+	MMF & Moving Metrology Frame (deut.: beweglicher Messrahmen, eng.: Metrology$ -> $ deut.: Messtechnik)
+\end{tabular}
+\subsubsection{Machine principle}
+The main purpose of the Jumbo 8k8 is the repititon accuracy. To achive this, the gantry system is water cooled to keep the system on room temperature. Also higher accelerations and speeds can be achieved with an active water cooling. There are two different movement parameter sets, on with air cooling and one with water cooling.
+\subsection{Maschinenübersicht}
+\subsubsection{Achsenübersicht}
+\begin{itemize}
+	\item Controller für MMF-Encoder
+	\begin{itemize}
+		\item ID 20/21 (Positionssignal nicht über ML7 sonder ML15-secondary encoder lesbar)
+		\item ID 30/31
+	\end{itemize}
+\end{itemize}
+
+\subsection{Differences to Standard 8k8}
+\paragraph{Emergency stop switch:} Usually the emergency stop is connected with the DIN1 of every AccurET-Controller. In a sequence this digital input is monitored to react on an emergency stop. This is applicable for the controllers inside the machine, but most of the controllers are in an nearby rack. On the Jumbo 8k8, the external rack handles the emergency stop seperately. 
+
+\subsection{Sequences}
+After booting the controller, the function \colBox{autostart()} will autamtically be executed. This is applicable for AccurET controllers as well as the UltimET's. 
+\subsubsection{Overview}
+\begin{itemize}
+	\item UltimET
+	\begin{itemize}
+		\item Thread 1: mainRoutine
+		\item Thread 2: errorHandling
+		\item Thread 3: ??
+	\end{itemize}
+\end{itemize}
+\subsubsection{UltimET}
+The \colBox{autostart()} function starts the \colBox{mainRoutine()} on Thread 1 and the \colBox{errorRoutine()} on Thread 2.
+The initerrorHandling() calls the func112() and executes it in thread 2 because *K142:2=112.
+\paragraph{mainRoutine()}
