@@ -1,0 +1,384 @@
+   
+######################################################    
+#####TOPOLOGY ####CAN bus / CAN interface / Turbo-Etel Bus
+
+OBJ_TOPO, canbus0
+OBJ_TOPO, canbus4
+
+#####DEFINES#####CAN bus/CAN interface
+
+
+OBJ_DEF, canbus0, candev
+	OBJ_INFO, CAN-bus internal
+	OBJ_ID,   /dev/can/0
+	OBJ_DISPATCHER, 5
+
+OBJ_DEF, canbus4, candev
+	OBJ_INFO, CAN-bus external
+	OBJ_ID,   /dev/can/4
+	OBJ_DISPATCHER, 5
+
+
+# Topology/ Defines CAN bus/CAN Interface is needed only once when you use more o5p
+######################################################
+
+
+
+	#####################
+	##     ACCURET     ##
+	#####################
+
+
+
+    OBJ_TOPO, axisZ
+
+        OBJ_DEF, axisZ, accax
+        OBJ_INFO, axisZ
+        OBJ_ID, 2
+
+
+
+########################################################################
+
+
+	##########################################
+	##	CAN1200		CONST PRESSURE	##
+	##########################################
+
+	OBJ_TOPO, mcp_1200, canbus4
+		OBJ_TOPO, const_pressure_set,		mcp_1200
+
+		OBJ_DEF, mcp_1200, mcpnode
+			OBJ_INFO, AD16_1200 const_pressure
+			OBJ_ID, 1200
+
+		OBJ_DEF, const_pressure_set, analogout
+			OBJ_INFO, AO 0: const_pressure_set
+			OBJ_ID, 0
+			OBJ_VAL_FACTOR, 0.1076 #0.10800#0.10900#0.10650#0.10600#0.105#0.1075#BACK to original value# 29-03-2018-MALE - 0.1056#0.104 # 0.096 #0.108 modifed by JOMU on 03.07.2018 orig val--> 0.1056
+			OBJ_VAL_OFFSET, -81  #-1697#-1647#-1607#-1530 #-1586#-1610#-1590#-1080#-1060#-980#-1170#-1150 # 240 #-1782
+
+
+	##########################################
+	##	CAN1208	VARIABLE PRESSURE	##
+	##########################################
+
+	OBJ_TOPO, mcp_1208, canbus4
+		OBJ_TOPO, var_pressure_set,		mcp_1208
+
+		OBJ_DEF, mcp_1208, mcpnode
+			OBJ_INFO, AD16_1208 var_pressure
+			OBJ_ID, 1208
+
+		OBJ_DEF, var_pressure_set, analogout
+			OBJ_INFO, AO 0: var_pressure_set
+			OBJ_ID, 0
+			OBJ_VAL_FACTOR, 0.104  # STFE      #0.09005 #0.09219#0.09171#0.09130
+			OBJ_VAL_OFFSET, 0            #-435.3#-978 #-463#-420#-441.4#-442.6
+
+
+	##########################################
+	##	CAN1216 extern	heater1		##
+	##########################################
+
+	OBJ_TOPO, mcp_1216ext, canbus4
+		OBJ_TOPO, Heater1_1216,             mcp_1216ext
+	    OBJ_TOPO, GabellichtschrankeTD,     mcp_1216ext
+	    OBJ_TOPO, Cooling,                  mcp_1216ext
+	    OBJ_TOPO, Beep,	                    mcp_1216ext
+	    OBJ_TOPO, SignalRed,                mcp_1216ext
+	    OBJ_TOPO, SignalYellow,	            mcp_1216ext
+	    OBJ_TOPO, SignalGreen,              mcp_1216ext
+	    OBJ_TOPO, InputPressure,            mcp_1216ext
+
+		OBJ_DEF, mcp_1216ext, mcpnode
+			OBJ_INFO, MCP_1216 THERMODE_Heater 1 & TD & flowsensors
+			OBJ_ID, 1216
+
+        OBJ_DEF, GabellichtschrankeTD, digitalin
+            OBJ_INFO, DI 0 GabellichtschrankeTD
+	        OBJ_ID, 0
+
+		OBJ_DEF, Cooling, digitalout
+			OBJ_INFO, DigOut5 Cooling
+			OBJ_ID, 0
+
+		OBJ_DEF, Beep, digitalout
+			OBJ_INFO, Beep
+			OBJ_ID, 2
+
+		OBJ_DEF, SignalRed, digitalout
+			OBJ_INFO, Signal Red
+			OBJ_ID, 3
+
+		OBJ_DEF, SignalYellow, digitalout
+			OBJ_INFO, Signal Yellow
+			OBJ_ID, 4
+
+		OBJ_DEF, SignalGreen, digitalout
+			OBJ_INFO, Signal Green
+			OBJ_ID, 5
+
+		OBJ_DEF, InputPressure, analogin
+		    OBJ_ID, 0
+		    OBJ_INFO, Input Pressure
+#		    OBJ_VAL_FACTOR, 1
+
+
+		OBJ_DEF, Heater1_1216, heating
+		    OBJ_INFO, Heater1
+		    OBJ_ID, 0
+			OBJ_MODE, AUTO
+			OBJ_HEAT_TOL_LOW, 1
+			OBJ_HEAT_TOL_HIGH, 1
+			OBJ_MAX_TEMP, 250
+			OBJ_MAX_PWM, 100
+			OBJ_MAX_I, 125
+			OBJ_P, 30000
+			#25000
+			OBJ_I, 2
+			#15
+			OBJ_D, 0
+			#3900     #4000
+			OBJ_GRADIENT_T, 2.35
+			OBJ_OFFSET_T, 20
+
+	##########################################
+	##	CAN1224		heater2		##
+	##########################################
+
+	OBJ_TOPO, mcp_1224, canbus4
+		OBJ_TOPO, Heater2_1224,				mcp_1224
+
+		OBJ_DEF, mcp_1224, mcpnode
+			OBJ_INFO, MCP_1224 THERMODE_Heater 2
+			OBJ_ID, 1224
+
+		OBJ_DEF, Heater2_1224,	 heating
+		    OBJ_INFO, Heater2
+		    OBJ_ID, 0
+			OBJ_MODE, AUTO
+			OBJ_HEAT_TOL_LOW, 1
+			OBJ_HEAT_TOL_HIGH, 1
+			OBJ_MAX_TEMP, 250
+			OBJ_MAX_PWM, 100
+			OBJ_MAX_I, 125
+			OBJ_P, 30000
+			OBJ_I, 2
+			OBJ_D, 0
+			OBJ_GRADIENT_T, 2.35
+			OBJ_OFFSET_T, 20
+
+
+
+#####################################################################################################
+########################## Daten für die Backplane (TGB 2) vom WOKO / JOMU ##########################
+#####################################################################################################
+
+# --------------------------------------------------------------------------
+# ------------------------ MCP_HEATER_CTRL0 -----------------------------
+# --------------------------------------------------------------------------
+
+	OBJ_TOPO, HEATER_CTRL0, canbus4
+
+        OBJ_TOPO, HT_AO_00,			HEATER_CTRL0
+		OBJ_TOPO, HT_DO_00,			HEATER_CTRL0
+		OBJ_TOPO, HT_DO_01,			HEATER_CTRL0
+		OBJ_TOPO, HT_DO_02,			HEATER_CTRL0
+		OBJ_TOPO, HT_DO_03,			HEATER_CTRL0        
+		OBJ_TOPO, HT_DO_04,			HEATER_CTRL0        
+		OBJ_TOPO, HT_AI_00,		    HEATER_CTRL0
+		OBJ_TOPO, HT_AI_01,		    HEATER_CTRL0			
+		OBJ_TOPO, HT_AI_02,		    HEATER_CTRL0		
+		OBJ_TOPO, HT_AI_03,		    HEATER_CTRL0
+        OBJ_TOPO, HT_TEMP2_00,      HEATER_CTRL0 
+        OBJ_TOPO, HT_TEMP2_01,      HEATER_CTRL0 
+        OBJ_TOPO, HT_TEMP2_02,      HEATER_CTRL0 
+        OBJ_TOPO, HT_TEMP2_03,      HEATER_CTRL0         
+		OBJ_TOPO, HT_CT_00,		    HEATER_CTRL0     
+		OBJ_TOPO, HT_CT_01,		    HEATER_CTRL0
+		OBJ_TOPO, HT_CT_02,		    HEATER_CTRL0
+		OBJ_TOPO, HT_CT_03,		    HEATER_CTRL0
+		OBJ_TOPO, HT_DI_00,			HEATER_CTRL0 
+		OBJ_TOPO, HT_DI_01,			HEATER_CTRL0 
+		OBJ_TOPO, HT_DI_02,			HEATER_CTRL0 
+		OBJ_TOPO, HT_DI_03,			HEATER_CTRL0 
+        OBJ_TOPO, HT_BOARDTEMP,     HEATER_CTRL0
+##        OBJ_TOPO, HT_TEMP_THERM0,   HEATER_CTRL0        
+        OBJ_TOPO, HT_PWR_24V,       HEATER_CTRL0 
+        OBJ_TOPO, HT_PWR_VOLT,      HEATER_CTRL0 
+        
+#	OBJ_TOPO, HEATER_CTRL5, canbus0
+#		OBJ_TOPO, HT5_DO_00,		HEATER_CTRL5        
+			
+# --------------------------------------------------------------------------
+# ------------------------ MCP_HEATER_CTRL0 -----------------------------
+# --------------------------------------------------------------------------
+
+	OBJ_DEF, HEATER_CTRL0, mcpnode
+        OBJ_INFO, CAN1024 (MCP_HEATER_CTRL0)
+		OBJ_ID, 1024
+
+	OBJ_DEF, HT_AO_00, analogout
+        OBJ_INFO, HT_AO_00
+		OBJ_ID, 0
+		OBJ_VAL_FACTOR, 0.01        
+
+	OBJ_DEF, HT_DI_00, digitalin
+        OBJ_INFO, Lightbarrier0
+		OBJ_ID, 0
+
+	OBJ_DEF, HT_DI_01, digitalin
+        OBJ_INFO, Lightbarrier1
+		OBJ_ID, 1
+
+	OBJ_DEF, HT_DI_02, digitalin
+        OBJ_INFO, Lightbarrier2
+		OBJ_ID, 2
+
+	OBJ_DEF, HT_DI_03, digitalin
+        OBJ_INFO, Lightbarrier3
+		OBJ_ID, 3        
+
+	OBJ_DEF, HT_DO_00, digitalout
+        OBJ_INFO, HT_DO_00
+		OBJ_ID, 0
+
+	OBJ_DEF, HT_DO_01, digitalout
+        OBJ_INFO, HT_DO_01
+		OBJ_ID, 1
+
+	OBJ_DEF, HT_DO_02, digitalout
+        OBJ_INFO, HT_DO_02    
+		OBJ_ID, 2		
+		
+	OBJ_DEF, HT_DO_03, digitalout
+        OBJ_INFO, HT_DO_03   
+		OBJ_ID, 3		
+		
+	OBJ_DEF, HT_DO_04, digitalout
+        OBJ_INFO, HT_DO_04
+		OBJ_ID, 4       
+ 
+	OBJ_DEF, HT_AI_00, analogin
+        OBJ_INFO, HT_AI_00
+		OBJ_ID, 0
+#		OBJ_VAL_FACTOR, 1
+		OBJ_VAL_FACTOR, 0.001221        
+
+        
+	OBJ_DEF, HT_AI_01, analogin
+        OBJ_INFO, HT_AI_01
+		OBJ_ID, 1
+		OBJ_VAL_FACTOR, 0.001221 		
+		
+	OBJ_DEF, HT_AI_02, analogin
+        OBJ_INFO, HT_AI_02
+		OBJ_ID, 2
+		OBJ_VAL_FACTOR, 0.001221 			
+		
+	OBJ_DEF, HT_AI_03, analogin
+        OBJ_INFO, HT_AI_03    
+		OBJ_ID, 3
+		OBJ_VAL_FACTOR, 0.001221 
+
+	OBJ_DEF, HT_TEMP2_00, analogin
+        OBJ_INFO, HT_TEMP2_00    
+		OBJ_ID, 8
+		OBJ_VAL_FACTOR, 0.1 
+
+	OBJ_DEF, HT_TEMP2_01, analogin
+        OBJ_INFO, HT_TEMP2_01    
+		OBJ_ID, 9
+		OBJ_VAL_FACTOR, 0.1 
+
+	OBJ_DEF, HT_TEMP2_02, analogin
+        OBJ_INFO, HT_TEMP2_02    
+		OBJ_ID, 10
+		OBJ_VAL_FACTOR, 0.1 
+        
+	OBJ_DEF, HT_TEMP2_03, analogin
+        OBJ_INFO, HT_TEMP2_03    
+		OBJ_ID, 11
+		OBJ_VAL_FACTOR, 0.1         
+        
+
+	OBJ_DEF, HT_BOARDTEMP, analogin
+        OBJ_INFO, HT_BOARDTEMP    
+		OBJ_ID, 12
+		OBJ_VAL_FACTOR, 0.1 
+
+##	OBJ_DEF, HT_TEMP_THERM0, analogin
+##        OBJ_INFO, HT_TEMP_THERM0    
+##		OBJ_ID, 13
+##		OBJ_VAL_FACTOR, 0.1 
+
+	OBJ_DEF, HT_PWR_24V, analogin
+        OBJ_INFO, HT_PWR_24V    
+		OBJ_ID, 14
+		OBJ_VAL_FACTOR, 0.1
+
+	OBJ_DEF, HT_PWR_VOLT, analogin
+        OBJ_INFO, HT_PWR_VOLT    
+		OBJ_ID, 15
+		OBJ_VAL_FACTOR, 0.1 
+
+	OBJ_DEF, HT_CT_00, ctrl
+        OBJ_INFO, HT_CT_00
+        OBJ_ID, 0
+        OBJ_VAL_FACTOR, 0.1
+        OBJ_VAL_OFFSET, 0
+        OBJ_LIMIT_DELTA, 0, 0 
+        OBJ_PID, 50, 0.001, 0 
+        #OBJ_LIMIT_MAXIMUM, 200        
+        #OBJ_FRAMELOG, 2        
+        
+	OBJ_DEF, HT_CT_01, ctrl
+        OBJ_INFO, HT_CT_01
+        OBJ_ID, 1
+        OBJ_VAL_FACTOR, 0.1
+        OBJ_VAL_OFFSET, 0
+        OBJ_LIMIT_DELTA, 0, 0 
+        OBJ_PID, 50, 0.001, 0 
+        #OBJ_LIMIT_MAXIMUM, 200        
+        #OBJ_FRAMELOG, 2 
+
+	OBJ_DEF, HT_CT_02, ctrl
+        OBJ_INFO, HT_CT_02
+        OBJ_ID, 2
+        OBJ_VAL_FACTOR, 0.1
+        OBJ_VAL_OFFSET, 0
+        OBJ_LIMIT_DELTA, 0, 0 
+        OBJ_PID, 50, 0.001, 0 
+        #OBJ_LIMIT_MAXIMUM, 200        
+        #OBJ_FRAMELOG, 2
+ 
+	OBJ_DEF, HT_CT_03, ctrl
+        OBJ_INFO, HT_CT_03
+        OBJ_ID, 3
+        OBJ_VAL_FACTOR, 0.1
+        OBJ_VAL_OFFSET, 0
+        OBJ_LIMIT_DELTA, 0, 0 
+        OBJ_PID, 50, 0.001, 0 
+        #OBJ_LIMIT_MAXIMUM, 200        
+        #OBJ_FRAMELOG, 2 
+    
+    
+
+# -----------------------------------------------------------------------
+# ------------------------ MCP_HEATER_CTRL5 -----------------------------
+# -----------------------------------------------------------------------  
+
+#	OBJ_TOPO, HEATER_CTRL5, canbus4
+#
+#		OBJ_TOPO, HT5_DO_00,		HEATER_CTRL5
+#
+#########################################################################
+#
+#	OBJ_DEF, HEATER_CTRL5, mcpnode
+#       OBJ_INFO, CAN1064 (MCP_HEATER_CTRL5)
+#		OBJ_ID, 1064
+#
+#	OBJ_DEF, HT5_DO_00, digitalout
+#        OBJ_INFO, HT5_DO_00
+#		OBJ_ID, 0
