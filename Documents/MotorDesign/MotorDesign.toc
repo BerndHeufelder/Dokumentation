@@ -5,11 +5,12 @@
 \contentsline {section}{\numberline {2}Static and viscous friction}{3}{section.8}%
 \contentsline {subsection}{\numberline {2.1}Examples and measurments of designed axis}{4}{subsection.10}%
 \contentsline {subsubsection}{\numberline {2.1.1}Overview}{4}{subsubsection.11}%
-\contentsline {paragraph}{\nonumberline Tape Feeder Camera X (TC-Next)}{4}{section*.12}%
-\contentsline {paragraph}{\nonumberline Component Shuttle X (TC-Next)}{4}{section*.14}%
-\contentsline {section}{\numberline {3}Spindle}{5}{section.16}%
-\contentsline {subsection}{\numberline {3.1}Efficiency}{5}{subsection.17}%
-\contentsline {subsection}{\numberline {3.2}Pitch accuracy}{5}{subsection.18}%
-\contentsline {section}{\numberline {4}Summary}{7}{section.20}%
-\contentsline {part}{\numberline {III}Stepper-Motor-Design}{8}{part.21}%
-\contentsline {part}{\numberline {IV}Linear-Motor-Design}{9}{part.22}%
+\contentsline {paragraph}{\nonumberline Tape Feeder Camera X (TC-Next)}{4}{paragraph*.13}%
+\contentsline {paragraph}{\nonumberline Component Shuttle X (TC-Next)}{4}{paragraph*.16}%
+\contentsline {section}{\numberline {3}Spindle}{6}{section.18}%
+\contentsline {subsection}{\numberline {3.1}Efficiency}{6}{subsection.19}%
+\contentsline {subsection}{\numberline {3.2}Pitch accuracy}{6}{subsection.20}%
+\contentsline {section}{\numberline {4}Summary}{8}{section.22}%
+\contentsline {part}{\numberline {III}Stepper-Motor-Design}{9}{part.23}%
+\contentsline {part}{\numberline {IV}Linear-Motor-Design}{10}{part.24}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
